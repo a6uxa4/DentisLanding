@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 export const SubServicesCard = ({ subService }: any) => {
-  console.log(subService);
   return (
     <div className="group w-[180px] h-[260px] rounded-lg bg-[#f3fbfb] flex flex-col items-center justify-around px-3 py-3 gap-2 cursor-pointer hover:bg-[#01d6d4] duration-700">
       <div className="w-[120px] h-[120px] min-h-[120px] min-w-[120px] flex items-center justify-center">
