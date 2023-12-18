@@ -1,8 +1,16 @@
 import React from "react";
 
-const CustomSVG = ({ paths, width, height, className, viewBox }: any) => {
+const CustomSVG = ({
+  paths,
+  width,
+  height,
+  className,
+  viewBox,
+  style,
+}: any) => {
   return (
     <svg
+      style={style}
       xmlns="http://www.w3.org/2000/svg"
       width={width}
       height={height}

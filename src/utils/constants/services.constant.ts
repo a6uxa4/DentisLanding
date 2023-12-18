@@ -3,6 +3,18 @@
 import CleaningTeeth from "../../assets/icons/Cleaning.svg";
 import CleaningTeethPhoto from "../../assets/images/Cleaning.png";
 
+import PainTeethPhoto from "../../assets/images/Pain.png";
+
+import CariesTeethPhoto from "../../assets/images/Caries.png";
+
+import NotPainteethPhoto from "../../assets/images/NotPain.png";
+
+import PulpitTeethPhoto from "../../assets/images/Pulpit.png";
+
+import PeriodintTeethPhoto from "../../assets/images/Periodint.png";
+
+import BlichTeethPhoto from "../../assets/images/Blich.png";
+
 export const SERVICES_DATA = [
   {
     name: "Терапия",
@@ -28,32 +40,32 @@ export const SERVICES_DATA = [
       {
         name: "Лечение зубов",
         icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
+        photo: PainTeethPhoto,
       },
       {
         name: "Лечение кариеса",
         icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
+        photo: CariesTeethPhoto,
       },
       {
         name: "Лечение без боли и страха",
         icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
+        photo: NotPainteethPhoto,
       },
       {
         name: "Лечение каналов — пульпита и периодонтита",
         icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
+        photo: PulpitTeethPhoto,
       },
       {
         name: "Лечение пародонтита",
         icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
+        photo: PeriodintTeethPhoto,
       },
       {
         name: "Отбелить зубы",
         icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
+        photo: BlichTeethPhoto,
       },
     ],
   },
