@@ -3,17 +3,50 @@
 import CleaningTeeth from "../../assets/icons/Cleaning.svg";
 import CleaningTeethPhoto from "../../assets/images/Cleaning.png";
 
+import PainTeeth from "../../assets/icons/Pain.svg";
 import PainTeethPhoto from "../../assets/images/Pain.png";
 
+import CariesTeeth from "../../assets/icons/Caries.svg";
 import CariesTeethPhoto from "../../assets/images/Caries.png";
 
+import NotPainTeeth from "../../assets/icons/NotPain.svg";
 import NotPainteethPhoto from "../../assets/images/NotPain.png";
 
+import PulpitTeeth from "../../assets/icons/Pulpit.svg";
 import PulpitTeethPhoto from "../../assets/images/Pulpit.png";
 
+import PeriodintTeeth from "../../assets/icons/Periodint.svg";
 import PeriodintTeethPhoto from "../../assets/images/Periodint.png";
 
+import BlichTeeth from "../../assets/icons/Blich.svg";
 import BlichTeethPhoto from "../../assets/images/Blich.png";
+
+import CrownTeeth from "../../assets/icons/Crown.svg";
+import CrownTeethPhoto from "../../assets/images/Crown.png";
+
+import ImplantTeeth from "../../assets/icons/Implant.svg";
+import ImplantTeethPhoto from "../../assets/images/Implant.png";
+
+import RestarationTeeth from "../../assets/icons/Restaration.svg";
+import RestarationTeethPhoto from "../../assets/images/Restaration.png";
+
+import VeneersTeeth from "../../assets/icons/Veneers.svg";
+import VeneersTeethPhoto from "../../assets/images/Veneers.png";
+
+import ProstheticsTeeth from "../../assets/icons/Prosthetics.svg";
+import ProstheticsTeethPhoto from "../../assets/images/Prosthetics.png";
+
+import BreketTeeth from "../../assets/icons/Breket.svg";
+import BreketTeethPhoto from "../../assets/images/Breket.png";
+
+import VnchsTeeth from "../../assets/icons/Vnchs.svg";
+import VnchsTeethPhoto from "../../assets/images/Cleaning.png";
+
+import KidsTeeth from "../../assets/icons/Kids.svg";
+import KidsTeethPhoto from "../../assets/images/Kids.png";
+
+import RemoveTeeth from "../../assets/icons/Remove.svg";
+import RemoveTeethPhoto from "../../assets/images/Remove.png";
 
 export const SERVICES_DATA = [
   {
@@ -39,32 +72,32 @@ export const SERVICES_DATA = [
       },
       {
         name: "Лечение зубов",
-        icon: CleaningTeeth,
+        icon: PainTeeth,
         photo: PainTeethPhoto,
       },
       {
         name: "Лечение кариеса",
-        icon: CleaningTeeth,
+        icon: CariesTeeth,
         photo: CariesTeethPhoto,
       },
       {
         name: "Лечение без боли и страха",
-        icon: CleaningTeeth,
+        icon: NotPainTeeth,
         photo: NotPainteethPhoto,
       },
       {
         name: "Лечение каналов — пульпита и периодонтита",
-        icon: CleaningTeeth,
+        icon: PulpitTeeth,
         photo: PulpitTeethPhoto,
       },
       {
         name: "Лечение пародонтита",
-        icon: CleaningTeeth,
+        icon: PeriodintTeeth,
         photo: PeriodintTeethPhoto,
       },
       {
         name: "Отбелить зубы",
-        icon: CleaningTeeth,
+        icon: BlichTeeth,
         photo: BlichTeethPhoto,
       },
     ],
@@ -96,33 +129,28 @@ export const SERVICES_DATA = [
     subServices: [
       {
         name: "Поставить коронку",
-        icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
+        icon: CrownTeeth,
+        photo: CrownTeethPhoto,
       },
       {
         name: "Поставить имплант",
-        icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
+        icon: ImplantTeeth,
+        photo: ImplantTeethPhoto,
       },
       {
         name: "Эстетические реставрации",
-        icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
+        icon: RestarationTeeth,
+        photo: RestarationTeethPhoto,
       },
       {
         name: "Установить виниры",
-        icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
+        icon: VeneersTeeth,
+        photo: VeneersTeethPhoto,
       },
       {
-        name: "Восстановление всех зубов за один день без съемных протезов",
-        icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
-      },
-      {
-        name: "Протезирование бюгельными протезами на телескопических коронках",
-        icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
+        name: "Протезирование зубов",
+        icon: ProstheticsTeeth,
+        photo: ProstheticsTeethPhoto,
       },
     ],
   },
@@ -147,13 +175,13 @@ export const SERVICES_DATA = [
     subServices: [
       {
         name: "Поставить брекеты, исправить прикус",
-        icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
+        icon: BreketTeeth,
+        photo: BreketTeethPhoto,
       },
       {
         name: "Проблемы ВНЧС",
-        icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
+        icon: VnchsTeeth,
+        photo: VnchsTeethPhoto,
       },
     ],
   },
@@ -176,8 +204,8 @@ export const SERVICES_DATA = [
     subServices: [
       {
         name: "Детская стоматология",
-        icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
+        icon: KidsTeeth,
+        photo: KidsTeethPhoto,
       },
     ],
   },
@@ -197,28 +225,8 @@ export const SERVICES_DATA = [
     subServices: [
       {
         name: "Удалить зуб",
-        icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
-      },
-    ],
-  },
-  {
-    name: "Диагностика",
-    id: 6,
-    icon: {
-      width: "32",
-      height: "31",
-      paths: [
-        [
-          "M18.6852 1.44566C18.8654 1.11731 19.4051 1.11705 19.5842 1.4454L20.3485 2.84198L21.7462 3.60579C21.9107 3.69549 22.0128 3.86773 22.0128 4.05494C22.0128 4.24215 21.9107 4.41438 21.7462 4.50408L20.4935 5.18868C22.1095 7.05066 23.0033 9.41925 23.0033 11.8905C23.0033 14.2571 22.188 16.4326 20.8335 18.1684L25.9793 24.0769L25.9668 24.0877C26.228 24.3331 26.7406 24.9124 27.9647 26.2956L27.9659 26.2972C28.3721 26.7598 28.5731 27.3529 28.5327 27.9667C28.4921 28.5808 28.215 29.1422 27.7518 29.5476C27.315 29.9299 26.7733 30.1179 26.234 30.1179C25.5927 30.1179 24.9544 29.8525 24.4992 29.3339C23.5513 28.2465 22.996 27.6093 22.6974 27.2115C22.6349 27.1837 22.5784 27.1439 22.5334 27.0925L17.2545 21.0755C15.8945 21.7432 14.3716 22.1287 12.7568 22.1287C7.10723 22.1287 2.51055 17.5358 2.51055 11.8905C2.51055 6.24514 7.10723 1.65219 12.7568 1.65219C14.5025 1.65219 16.2198 2.10057 17.735 2.94384L17.9213 2.84198L18.6852 1.44566ZM8.65944 27.7578C8.94245 27.7578 9.17167 27.987 9.17167 28.2696V29.2933C9.17167 29.576 8.94257 29.8052 8.65944 29.8052C8.3763 29.8052 8.1472 29.576 8.1472 29.2933V28.2696C8.1472 27.987 8.3763 27.7578 8.65944 27.7578ZM25.5545 25.1273L23.6511 26.7944C24.0571 27.2654 24.7739 28.0897 25.271 28.6603C25.7348 29.1889 26.5457 29.2432 27.0769 28.7778C27.3346 28.5523 27.4886 28.2407 27.5105 27.8996C27.533 27.5587 27.4215 27.2296 27.1964 26.9726C26.6969 26.4084 25.9692 25.5888 25.5545 25.1273ZM7.63496 26.7341C7.91797 26.7341 8.1472 26.9633 8.1472 27.2459C8.1472 27.5286 7.9181 27.7578 7.63496 27.7578H6.61049C6.32735 27.7578 6.09825 27.5286 6.09825 27.2459C6.09825 26.9633 6.32735 26.7341 6.61049 26.7341H7.63496ZM10.7084 26.7341C10.9914 26.7341 11.2206 26.9633 11.2206 27.2459C11.2206 27.5286 10.9915 27.7578 10.7084 27.7578H9.68391C9.40077 27.7578 9.17167 27.5286 9.17167 27.2459C9.17167 26.9633 9.40077 26.7341 9.68391 26.7341H10.7084ZM8.65944 24.6867C8.94257 24.6867 9.17167 24.9159 9.17167 25.1985V26.2222C9.17167 26.5049 8.94257 26.7341 8.65944 26.7341C8.3763 26.7341 8.1472 26.5049 8.1472 26.2222V25.1985C8.1472 24.9159 8.3763 24.6867 8.65944 24.6867ZM20.2113 19.0126L19.445 19.6299C19.2883 19.7651 19.1263 19.8932 18.9618 20.019L18.2167 20.6191L22.9666 26.0326L24.872 24.3638L20.2113 19.0126ZM12.7573 2.67589C7.67248 2.67589 3.53553 6.80945 3.53553 11.8905C3.53553 16.9715 7.67236 21.105 12.7575 21.105C14.8388 21.105 16.7549 20.4043 18.3 19.2375L18.8002 18.8346C20.7435 17.1439 21.9792 14.6612 21.9792 11.8905C21.9792 9.76283 21.2403 7.72195 19.9037 6.08148L19.5845 6.66447C19.495 6.82865 19.3224 6.93063 19.1353 6.93063C18.9482 6.93063 18.7756 6.82839 18.6856 6.66422L17.9217 5.26789L16.5246 4.50408C16.36 4.41438 16.258 4.24215 16.258 4.05494C16.258 3.86773 16.36 3.69549 16.5246 3.60579L16.6478 3.53848C15.4356 2.97481 14.1066 2.67589 12.7573 2.67589ZM1.61683 18.6278C1.9193 18.6278 2.16453 18.873 2.16453 19.1751C2.16453 19.4772 1.91917 19.7223 1.61683 19.7223C1.31448 19.7223 1.06924 19.4773 1.06924 19.1751C1.06924 18.8728 1.31435 18.6278 1.61683 18.6278ZM14.27 6.95239C15.5535 6.95239 16.5976 7.99592 16.5976 9.27823C16.5976 9.31022 16.5946 9.34221 16.5886 9.37344L16.0344 12.2961L15.6161 16.0702C15.5731 16.4572 15.2879 16.7706 14.9063 16.8498C14.5251 16.9277 14.1374 16.7551 13.9438 16.4169L12.7813 14.3832L11.5702 16.4164C11.4082 16.7003 11.1096 16.8687 10.7924 16.8687C10.7313 16.8687 10.6698 16.8626 10.6088 16.8498C10.2265 16.7708 9.94144 16.4573 9.89841 16.07L9.47428 12.2573L8.92605 9.37344C8.92004 9.34221 8.91709 9.31022 8.91709 9.27823C8.91709 7.99579 9.96116 6.95239 11.2447 6.95239C11.6348 6.95239 12.0215 7.0513 12.3626 7.23851C12.6122 7.37569 12.8993 7.37722 13.152 7.23877C13.4926 7.05156 13.8793 6.95239 14.27 6.95239ZM14.27 7.97621C14.0484 7.97621 13.8383 8.02996 13.6457 8.13591C13.0894 8.44187 12.4251 8.44161 11.8689 8.13566C11.6763 8.02996 11.4661 7.97621 11.2446 7.97621C10.5408 7.97621 9.96551 8.53656 9.94195 9.23408L10.4867 12.1057L10.8738 15.5712L11.8438 13.8754C12.0334 13.5437 12.3746 13.3455 12.7572 13.3455C13.1398 13.3455 13.4811 13.5437 13.6706 13.8754L14.6406 15.5717L15.0218 12.1445L15.5726 9.23434C15.549 8.53656 14.9738 7.97621 14.27 7.97621ZM29.7898 11.4619C30.0923 11.4619 30.3375 11.7071 30.3375 12.0092C30.3375 12.3113 30.0922 12.5564 29.7898 12.5564C29.4875 12.5564 29.2422 12.3115 29.2422 12.0092C29.2422 11.707 29.4874 11.4619 29.7898 11.4619ZM19.1353 2.75829L18.7491 3.46477C18.702 3.55064 18.631 3.6214 18.545 3.66849L17.8377 4.05506L18.545 4.44164C18.631 4.4886 18.7021 4.55936 18.7491 4.64536L19.1353 5.35184L19.5224 4.6451C19.5694 4.55936 19.64 4.4886 19.726 4.44164L20.4333 4.05506L19.726 3.66849C19.64 3.62153 19.5694 3.55077 19.5224 3.46503L19.1353 2.75829ZM26.3316 0.11792C27.3201 0.11792 28.1244 0.921651 28.1244 1.90939C28.1244 2.89713 27.3201 3.70087 26.3316 3.70087C25.3431 3.70087 24.5388 2.89713 24.5388 1.90939C24.5388 0.921651 25.3431 0.11792 26.3316 0.11792ZM26.3316 1.14162C25.9078 1.14162 25.5632 1.48597 25.5632 1.90939C25.5632 2.33282 25.9078 2.67717 26.3316 2.67717C26.7553 2.67717 27.0999 2.33282 27.0999 1.90939C27.0999 1.48597 26.7553 1.14162 26.3316 1.14162Z",
-        ],
-      ],
-    },
-    subServices: [
-      {
-        name: "Диагностика зубов с помощью ИИ",
-        icon: CleaningTeeth,
-        photo: CleaningTeethPhoto,
+        icon: RemoveTeeth,
+        photo: RemoveTeethPhoto,
       },
     ],
   },
