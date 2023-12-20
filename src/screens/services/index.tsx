@@ -21,8 +21,8 @@ export const ServicesPage = () => {
     }),
   };
   return (
-    <div className="w-full flex flex-col">
-      <div className="flex w-full gap-4">
+    <div className="w-full flex flex-col gap-5">
+      <div className="flex justify-center gap-3">
         {SERVICES_DATA.map((item) => (
           <ServicesCard
             key={item.id}
@@ -32,7 +32,7 @@ export const ServicesPage = () => {
           />
         ))}
       </div>
-      <div className="flex">
+      <div className="w-full h-full flex flex-wrap justify-center gap-3">
         {SERVICES_DATA[activeService - 1].subServices.map((item, index) => (
           <motion.div
             key={index}
@@ -43,6 +43,7 @@ export const ServicesPage = () => {
               once: true,
             }}
             custom={index}
+            className="max-h-[250px]"
           >
             <SubServicesCard subService={item} />
           </motion.div>
