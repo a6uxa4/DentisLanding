@@ -3,6 +3,10 @@ import { HEADER_NAV } from "@/utils/constants/header.constant";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 
+import { MapContainer } from "./Map";
+import { ScheduleContainer } from "./Schedule";
+import { Call } from "./Call";
+
 export const Header = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [selectedHeader, setSelectedHeader] = useState<null | number>(null);
@@ -24,7 +28,7 @@ export const Header = () => {
         scrolled ? "bg-[#00d6d4]" : "bg-transparent"
       } transition duration-300 ease-in-out`}
     >
-      <div className="w-full h-full max-w-[1440px] m-auto px-4 flex">
+      <div className="w-full h-full max-w-[1440px] m-auto px-4 flex relative">
         <div className="w-full h-full">
           <h1
             className={`text-[30px] font-bold ${
@@ -45,7 +49,15 @@ export const Header = () => {
           {HEADER_NAV.map((item) => (
             <div
               onMouseEnter={() => setSelectedHeader(item.id)}
-              onMouseLeave={() => setSelectedHeader(null)}
+              onMouseLeave={() => {
+                if (selectedHeader === 1) {
+                  return;
+                } else if (selectedHeader === 3) {
+                  return;
+                } else {
+                  setSelectedHeader(null);
+                }
+              }}
               key={item.id}
               className={clsx(
                 "flex gap-2 w-fit h-fit px-3 py-2 rounded-md cursor-pointer transition duration-300 ease-in-out",
@@ -67,6 +79,21 @@ export const Header = () => {
               {item.name}
             </div>
           ))}
+        </div>
+        <div
+          className="absolute w-full bottom-[-350px] left-[50%]"
+          onMouseLeave={() => setSelectedHeader(null)}
+        >
+          {selectedHeader === 1 && <MapContainer />}
+        </div>
+        <div className="absolute w-full bottom-[-240px] left-[69%]">
+          {selectedHeader === 2 && <ScheduleContainer />}
+        </div>
+        <div
+          className="absolute w-full bottom-[-180px] left-[84%]"
+          onMouseLeave={() => setSelectedHeader(null)}
+        >
+          {selectedHeader === 3 && <Call />}
         </div>
       </div>
     </header>
