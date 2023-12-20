@@ -21,33 +21,38 @@ export const ServicesPage = () => {
     }),
   };
   return (
-    <div className="w-full flex flex-col gap-5">
-      <div className="flex justify-center gap-3">
-        {SERVICES_DATA.map((item) => (
-          <ServicesCard
-            key={item.id}
-            service={item}
-            activeService={activeService}
-            setActiveService={setActiveService}
-          />
-        ))}
+    <div className="w-full h-full min-h-fit mt-[100px]">
+      <div className="py-5 w-full flex items-center justify-center">
+        <h1 className="text-[30px] font-bold font-mono">Услуги Estetic</h1>
       </div>
-      <div className="w-full h-full flex flex-wrap justify-center gap-3">
-        {SERVICES_DATA[activeService - 1].subServices.map((item, index) => (
-          <motion.div
-            key={index}
-            variants={fadeInAnimationVariants}
-            initial="initial"
-            whileInView="animate"
-            viewport={{
-              once: true,
-            }}
-            custom={index}
-            className="max-h-[250px]"
-          >
-            <SubServicesCard subService={item} />
-          </motion.div>
-        ))}
+      <div className="w-full flex flex-col gap-5">
+        <div className="flex justify-center gap-3">
+          {SERVICES_DATA.map((item) => (
+            <ServicesCard
+              key={item.id}
+              service={item}
+              activeService={activeService}
+              setActiveService={setActiveService}
+            />
+          ))}
+        </div>
+        <div className="w-full h-full flex flex-wrap justify-center gap-3">
+          {SERVICES_DATA[activeService - 1].subServices.map((item, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={index}
+              className="max-h-[250px]"
+            >
+              <SubServicesCard subService={item} />
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   );
