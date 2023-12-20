@@ -1,6 +1,7 @@
 import { FC, FunctionComponent, PropsWithChildren } from "react";
 import { Header } from "../screens/header";
 import { Inter } from "next/font/google";
+import { Footer } from "@/screens/footer";
 
 interface IProps extends PropsWithChildren {}
 
@@ -11,11 +12,11 @@ export const Layout: FC<IProps> = ({ children }) => {
     <>
       <Header />
       <main
-        className={`w-full h-full m-auto grid place-content-center max-w-[1440px] px-[10px] ${inter.className}`}
+        className={`w-full h-full min-h-[calc(100vh_-_80px)] m-auto grid place-content-center max-w-[1440px] px-[10px] ${inter.className}`}
       >
         {children}
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
