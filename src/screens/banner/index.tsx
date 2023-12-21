@@ -1,5 +1,5 @@
 import React from "react";
-import videoSrc from "../../assets/video/EsteticVideo.mp4";
+const videoSrc = require("../../assets/video/EsteticVideo.mp4").default;
 
 export const BannerPage = () => {
   return (
