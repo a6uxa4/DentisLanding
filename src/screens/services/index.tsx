@@ -23,7 +23,7 @@ export const ServicesPage = () => {
   return (
     <div className="w-full">
       <div className="py-5 w-full flex items-center justify-center">
-        <h1 className="text-[30px] font-bold font-mono">Услуги Estetic</h1>
+        <h1 className="text-[30px] font-bold font-mono">Наши Услуги</h1>
       </div>
       <div className="w-full flex flex-col gap-5">
         <div className="flex justify-center gap-3">

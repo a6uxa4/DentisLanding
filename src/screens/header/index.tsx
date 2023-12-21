@@ -3,9 +3,9 @@ import { HEADER_NAV } from "@/utils/constants/header.constant";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 
-import { MapContainer } from "./Map";
-import { ScheduleContainer } from "./Schedule";
-import { Call } from "./Call";
+import { MapContainer } from "../../components/header/Map";
+import { ScheduleContainer } from "../../components/header/Schedule";
+import { Call } from "../../components/header/Call";
 
 export const Header = () => {
   const [scrolled, setScrolled] = useState<boolean>(false);
