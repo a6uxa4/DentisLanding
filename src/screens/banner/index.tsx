@@ -1,41 +1,10 @@
 import { Typewriter } from "react-simple-typewriter";
-import BannerPhoto from "../../assets/images/Banner.png";
-import Image from "next/image";
-import { motion } from "framer-motion";
 
 export const BannerPage = () => {
-  const fadeInAnimationVariants = {
-    initial: {
-      opacity: 0,
-      y: 300,
-    },
-    animate: () => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.05,
-      },
-    }),
-  };
-
-  const fadeAnimationVariants = {
-    initial: {
-      opacity: 0,
-      y: -300,
-    },
-    animate: () => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 0.05,
-      },
-    }),
-  };
-
   return (
-    <div className="w-full h-full flex justify-between items-center gap-28 border-b pb-[50px]">
-      <div className="w-full">
-        <div className="bg-[#d7fffe] absolute bottom-2 -z-10  h-[500px] w-[35.25rem] rounded-full blur-[10rem]"></div>
+    <div className="w-[100vw] h-[600px] relative flex justify-center items-center">
+      <div className="w-full h-full blur-[3px] absolute bg-cover bg-no-repeat bg-fixed bg-[url('https://img.freepik.com/free-photo/professional-dentist-tools-in-the-dental-office_1204-235.jpg?w=1800&t=st=1703237082~exp=1703237682~hmac=4721edff37f238fce621147194ca6eb24dbf6d26b89d731c9a1b69b00111fba4')]"></div>
+      <div className="w-full px-11 max-w-[1440px] blur-none">
         <div className="w-full min-w-[650px] max-w-[650px] font-mono font-black text-[40px] leading-[50px] tracking-wide">
           <Typewriter
             words={[
@@ -54,32 +23,6 @@ export const BannerPage = () => {
           />
           <span className="text-[#00d6d4]">стомотологии</span>
         </div>
-      </div>
-      <div className="w-full h-full relative flex items-center justify-center ">
-        <motion.div
-          className="w-[500px] h-[500px] rounded-full bg-gradient-to-b from-[#d7fffe] via-[#40fffc] to-[#00d6d4] shadow-xl"
-          variants={fadeInAnimationVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{
-            once: true,
-          }}
-        ></motion.div>
-        <motion.div
-          className="w-[350px] h-[500px] absolute top-0"
-          variants={fadeAnimationVariants}
-          initial="initial"
-          whileInView="animate"
-          viewport={{
-            once: true,
-          }}
-        >
-          <Image
-            src={BannerPhoto}
-            alt="BannerPhoto"
-            className="w-[350px] h-[500px]"
-          />
-        </motion.div>
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ export const ServicesPage = () => {
     }),
   };
   return (
-    <div className="w-full">
+    <div className="w-full py-10">
       <div className="py-5 w-full flex items-center justify-center">
         <h1 className="text-[30px] font-bold font-mono">Наши Услуги</h1>
       </div>

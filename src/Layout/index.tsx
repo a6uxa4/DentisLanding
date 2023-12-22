@@ -12,7 +12,7 @@ export const Layout: FC<IProps> = ({ children }) => {
     <>
       <Header />
       <main
-        className={`w-full h-full min-h-[calc(100vh_-_100px)] m-auto grid place-content-center max-w-[1440px] px-[10px] pb-[100px] pt-[90px] ${inter.className}`}
+        className={`w-full h-full min-h-[calc(100vh_-_100px)] m-auto grid place-content-center py-[90px] ${inter.className}`}
       >
         {children}
       </main>
