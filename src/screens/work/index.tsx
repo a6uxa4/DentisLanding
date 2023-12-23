@@ -1,5 +1,60 @@
-import React from "react";
+import { WorkCard } from "@/components/work/WorkCard";
+import { WorksCard } from "@/components/work/WorksCard";
+import { WORK_DATA } from "@/utils/constants/work.constant";
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 export const WorkPage = () => {
-  return <div>WorkPage</div>;
+  const [selectedWork, setSelectedWork] = useState(1);
+
+  const fadeInAnimationVariants = {
+    initial: {
+      opacity: 0,
+      x: -100,
+    },
+    animate: (index: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: 0.05 * index * 2,
+      },
+    }),
+  };
+
+  return (
+    <div className="w-full py-10">
+      <div className="py-5 w-full flex items-center justify-center">
+        <h1 className="text-[30px] font-bold font-mono">Примеры работ</h1>
+      </div>
+      <div className="w-full flex items-start justify-evenly gap-[100px] px-5 m-auto max-w-[1440px]">
+        <div className="w-full flex flex-col gap-5 max-w-fit ml-[100px]">
+          {WORK_DATA.map((work) => (
+            <WorkCard
+              key={work.id}
+              work={work}
+              id={selectedWork}
+              onClick={setSelectedWork}
+            />
+          ))}
+        </div>
+        <div className="w-full flex flex-col gap-5">
+          {WORK_DATA[selectedWork - 1].works.map((works, index) => (
+            <motion.div
+              key={index}
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              viewport={{
+                once: true,
+              }}
+              custom={index + 1}
+              className="max-h-[250px]"
+            >
+              <WorksCard works={works} />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 };
