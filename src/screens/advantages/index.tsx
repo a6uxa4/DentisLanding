@@ -1,6 +1,5 @@
 import { AdvantagesCard } from "@/components/advantages/AdvantagesCard";
 import { ADVANTAGES } from "@/utils/constants/advantages.constant";
-import React from "react";
 
 export const AdvantagesPage = () => {
   return (
