@@ -24,7 +24,7 @@ export const Header = () => {
 
   return (
     <header
-      className={`fixed z-10 w-full h-[80px] ${
+      className={`fixed z-20 w-full h-[80px] ${
         scrolled ? "bg-[#00d6d4]" : "bg-transparent"
       } transition duration-300 ease-in-out`}
     >
