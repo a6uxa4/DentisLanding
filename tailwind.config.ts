@@ -10,12 +10,14 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
+    extend: {},
+    screens: {
+      xl: { max: "1279px" }, // => @media (max-width: 1279px) { ... }
+      lg: { max: "900px" }, // => @media (max-width: 1023px) { ... }
+      md: { max: "768px" }, // => @media (max-width: 767px) { ... }
+      sm: { max: "640px" }, // => @media (max-width: 639px) { ... }
+      xs: { max: "440px" }, // => @media (max-width: 480px) { ... },
+      ms: { max: "350px" }, // => @media (max-width: 350px) { ... }
     },
   },
   plugins: [nextui()],
