@@ -3,7 +3,6 @@ import { HEADER_NAV } from "@/utils/constants/header.constant";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 
-import { MapContainer } from "../../components/header/Map";
 import { ScheduleContainer } from "../../components/header/Schedule";
 import { Call } from "../../components/header/Call";
 
@@ -50,9 +49,7 @@ export const Header = () => {
             <div
               onMouseEnter={() => setSelectedHeader(item.id)}
               onMouseLeave={() => {
-                if (selectedHeader === 1) {
-                  return;
-                } else if (selectedHeader === 3) {
+                if (selectedHeader === 3) {
                   return;
                 } else {
                   setSelectedHeader(null);
@@ -79,12 +76,6 @@ export const Header = () => {
               {item.name}
             </div>
           ))}
-        </div>
-        <div
-          className="absolute w-full bottom-[-350px] left-[50%]"
-          onMouseLeave={() => setSelectedHeader(null)}
-        >
-          {selectedHeader === 1 && <MapContainer />}
         </div>
         <div className="absolute w-full bottom-[-240px] left-[69%]">
           {selectedHeader === 2 && <ScheduleContainer />}

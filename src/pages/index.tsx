@@ -1,5 +1,6 @@
 import { withLayout } from "@/Layout";
 import { AboutPage } from "@/screens/about";
+import { Address } from "@/screens/address";
 import { AdvantagesPage } from "@/screens/advantages";
 import { Appointments } from "@/screens/appointments";
 import { BannerPage } from "@/screens/banner";
@@ -18,6 +19,7 @@ function Home() {
       <AboutPage />
       <WorkPage />
       <FeedbackPage />
+      <Address />
       <Appointments />
     </>
   );
