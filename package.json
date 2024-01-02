@@ -19,10 +19,12 @@
     "react": "^18",
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.2",
+    "react-icons": "^4.12.0",
     "react-redux": "^9.0.4",
     "react-simple-typewriter": "^5.0.1",
     "react-slick": "^0.29.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.0.5"
   },
   "devDependencies": {
     "@types/node": "^20",

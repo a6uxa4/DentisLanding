@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export const ResponsiveServices = () => {
   return (
-    <div className="w-full !min-w-[90vw] !max-w-[90vw] xs:!min-w-[95vw] xs:!max-w-[95vw] hidden lg:block">
+    <div className="w-full !min-w-[90vw] !max-w-[90vw] xs:!min-w-[100vw] xs:!max-w-[100vw] hidden lg:block !px-2">
       <Accordion
         itemClasses={{
           title: "sm:text-[14px]",
