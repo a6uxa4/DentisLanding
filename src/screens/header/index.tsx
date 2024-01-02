@@ -23,12 +23,12 @@ export const Header = () => {
 
   return (
     <header
-      className={`fixed z-20 w-full h-[80px] ${
+      className={`fixed z-20 w-full h-[50px] ${
         scrolled ? "bg-[#00d6d4]" : "bg-transparent"
       } transition duration-300 ease-in-out`}
     >
       <div className="w-full h-full max-w-[1440px] m-auto px-4 flex relative">
-        <div className="w-full h-full">
+        <div className="w-full h-full flex items-center justify-center">
           <h1
             className={`text-[30px] font-bold ${
               !scrolled ? "text-[#00d6d4]" : "text-white"

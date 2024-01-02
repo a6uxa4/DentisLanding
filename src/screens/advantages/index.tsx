@@ -14,7 +14,7 @@ export const AdvantagesPage = () => {
           </h1>
         </div>
         <div className="w-full px-5 md:block gap-3 max-w-[100vw] hidden">
-          <Marquee speed={100} loop={0} pauseOnHover={true}>
+          <Marquee speed={50} loop={0} pauseOnHover={true}>
             {ADVANTAGES.map((advantages) => (
               <AdvantagesCard key={advantages.id} advantages={advantages} />
             ))}
