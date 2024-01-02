@@ -3,7 +3,7 @@ version: 2.1
 parameters:
   docker-container:
     type: string
-    default: "dentistLanding-next-dev"
+    default: "estetic-clinic-next"
     description: "Docker container name for Cheber Next Js"
 
 jobs:
