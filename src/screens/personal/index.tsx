@@ -1,3 +1,5 @@
+"use client";
+
 import ContainerSlider from "@/components/UI/Containerslider";
 import { PersonalCard } from "@/components/personal/PersonalCard";
 import { PERSONALS } from "@/utils/constants/personal.constant";

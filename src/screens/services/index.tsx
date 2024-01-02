@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import { ServicesCard } from "@/components/services/ServicesCard";
 import { SubServicesCard } from "@/components/services/SubServicesCard";

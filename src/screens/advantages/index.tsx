@@ -1,3 +1,5 @@
+"use client";
+
 import { AdvantagesCard } from "@/components/advantages/AdvantagesCard";
 import { ADVANTAGES } from "@/utils/constants/advantages.constant";
 import Marquee from "react-fast-marquee";

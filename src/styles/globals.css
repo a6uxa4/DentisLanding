@@ -4,6 +4,19 @@
 @tailwind components;
 @tailwind utilities;
 
-.my-font{
+.my-font {
   font-family: "Manrope", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
