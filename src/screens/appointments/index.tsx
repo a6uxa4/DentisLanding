@@ -35,9 +35,9 @@ export const Appointments = () => {
   const { data } = useGetPersonalQuery();
 
   return (
-    <div className="w-[100vw] bg-[#00d6d5] relative flex justify-center items-start py-10 text-center mb-[100px]">
+    <div className="w-[100vw] bg-[#eef9f9] relative flex justify-center items-start py-10 text-center">
       <div className="w-full flex flex-col items-center justify-between gap-2 max-w-[1440px]">
-        <div className="w-full flex flex-col gap-2">
+        <div className="w-full flex flex-col items-center gap-2">
           <Input
             className="max-w-xs"
             type="string"

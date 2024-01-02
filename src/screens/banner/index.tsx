@@ -1,4 +1,3 @@
-import LottieAnimation from "@/components/banner/AnimationBanner";
 import { Typewriter } from "react-simple-typewriter";
 
 export const BannerPage = () => {
@@ -22,9 +21,6 @@ export const BannerPage = () => {
             delaySpeed={5000}
           />
           <span className="text-[#00d6d4]">стомотологии</span>
-        </div>
-        <div className="w-full max-w-[700px]">
-          <LottieAnimation />
         </div>
       </div>
     </div>

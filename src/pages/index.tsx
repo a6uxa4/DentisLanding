@@ -1,4 +1,5 @@
 import { withLayout } from "@/Layout";
+import SwitchContact from "@/components/UI/SwitchContact/SwitchContact";
 import { AboutPage } from "@/screens/about";
 import { Address } from "@/screens/address";
 import { AdvantagesPage } from "@/screens/advantages";
@@ -12,15 +13,16 @@ import { WorkPage } from "@/screens/work";
 function Home() {
   return (
     <>
-      <BannerPage />
+      {/* <BannerPage /> */}
       <ServicesPage />
-      <AdvantagesPage />
+      {/* <AdvantagesPage />
       <PersonalPage />
       <AboutPage />
       <WorkPage />
       <FeedbackPage />
       <Address />
       <Appointments />
+      <SwitchContact /> */}
     </>
   );
 }

@@ -16,7 +16,7 @@ export const Address = () => {
         <div className="py-5 w-full flex items-center justify-center">
           <h1 className="text-[30px] font-bold font-mono">Наш адрес</h1>
         </div>
-        <div className="w-full min-w-[100vw] h-[300px]">
+        <div className="w-full min-w-[100vw] h-[400px]">
           <YMaps>
             <YandexMap defaultState={defaultState} className="w-full h-full bg-black/20">
               <Placemark geometry={[defaultCenter.lat, defaultCenter.lng]} />
