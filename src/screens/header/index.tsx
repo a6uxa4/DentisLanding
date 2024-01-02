@@ -36,15 +36,15 @@ export const Header = () => {
           >
             ESTETIC
           </h1>
-          <span
+          {/* <span
             className={`text-[16px] ${
               !scrolled ? "text-[#00d6d4]" : "text-white"
             } transition duration-300 ease-in-out`}
           >
             Стоматологическая клиника №1 в Бишкеке
-          </span>
+          </span> */}
         </div>
-        <div className="w-full h-full flex items-center justify-around">
+        {/* <div className="w-full h-full flex items-center justify-around">
           {HEADER_NAV.map((item) => (
             <div
               onMouseEnter={() => setSelectedHeader(item.id)}
@@ -76,7 +76,7 @@ export const Header = () => {
               {item.name}
             </div>
           ))}
-        </div>
+        </div> */}
         <div className="absolute w-full bottom-[-240px] left-[69%]">
           {selectedHeader === 2 && <ScheduleContainer />}
         </div>

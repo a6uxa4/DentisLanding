@@ -15,14 +15,14 @@ function Home() {
     <>
       {/* <BannerPage /> */}
       <ServicesPage />
-      {/* <AdvantagesPage />
-      <PersonalPage />
+      <AdvantagesPage />
+      {/* <PersonalPage />
       <AboutPage />
       <WorkPage />
       <FeedbackPage />
       <Address />
-      <Appointments />
-      <SwitchContact /> */}
+      <Appointments /> */}
+      <SwitchContact />
     </>
   );
 }
