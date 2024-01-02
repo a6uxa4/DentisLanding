@@ -4,6 +4,7 @@ export const baseQuery = fetchBaseQuery({
   baseUrl: process.env.SERVER_URL,
 });
 
+
 export const baseQueryWithReauth = async (
   args: FetchArgs | string,
   api: any,
