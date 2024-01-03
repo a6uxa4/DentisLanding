@@ -69,7 +69,7 @@ export const AboutPage = () => {
                 src={BannerPhoto}
                 alt="BannerPhoto"
                 className="w-[250px] h-[350px]"
-                loading="lazy"
+                loading="eager"
               />
             </motion.div>
           </div>
