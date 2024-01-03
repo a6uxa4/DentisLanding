@@ -3,14 +3,18 @@ import React from "react";
 
 export const WorksCard = ({ works }: any) => {
   return (
-    <div className="bg-white shadow-md px-5 py-5 w-fit flex gap-5 items-center">
+    <div className="bg-white shadow-md px-5 py-5 md:px-2 md:py-2 w-fit flex md:flex-col gap-5 items-center">
       <div className="relative mb-[30px]">
-        <Image src={works.beforeImage} alt="beforeImage" />
-        <div className="w-[65px] h-[65px] bg-[#00d6d5] rounded-full absolute left-[40%] bottom-[-30px] text-white flex items-center justify-center font-semibold">
+        <Image
+          src={works.beforeImage}
+          alt="beforeImage"
+          className="md:w-[200px]"
+        />
+        <div className="w-[65px] h-[65px] lg:w-[50px] lg:h-[50px] md:w-[40px] md:h-[40px] lg:text-[12px] bg-[#00d6d5] rounded-full absolute left-[40%] bottom-[-30px] text-white flex items-center justify-center font-semibold">
           До
         </div>
       </div>
-      <div>
+      <div className="md:rotate-90">
         <svg
           fill="#00d6d4"
           viewBox="0 0 24 24"
@@ -22,8 +26,12 @@ export const WorksCard = ({ works }: any) => {
         </svg>
       </div>
       <div className="relative mb-[30px]">
-        <Image src={works.afterImage} alt="afterImage" />
-        <div className="w-[65px] h-[65px] bg-[#00d6d5] rounded-full absolute left-[40%] bottom-[-30px] text-white flex items-center justify-center font-semibold">
+        <Image
+          src={works.afterImage}
+          alt="afterImage"
+          className="md:w-[200px]"
+        />
+        <div className="w-[65px] h-[65px] lg:w-[50px] lg:h-[50px] md:w-[40px] md:h-[40px] lg:text-[12px] bg-[#00d6d5] rounded-full absolute left-[40%] bottom-[-30px] text-white flex items-center justify-center font-semibold">
           После
         </div>
       </div>

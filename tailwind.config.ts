@@ -13,7 +13,7 @@ const config: Config = {
     extend: {},
     screens: {
       xl: { max: "1279px" }, // => @media (max-width: 1279px) { ... }
-      lg: { max: "1000px" }, // => @media (max-width: 1023px) { ... }
+      lg: { max: "1000px" }, // => @media (max-width: 999px) { ... }
       md: { max: "768px" }, // => @media (max-width: 767px) { ... }
       sm: { max: "640px" }, // => @media (max-width: 639px) { ... }
       xs: { max: "440px" }, // => @media (max-width: 480px) { ... },

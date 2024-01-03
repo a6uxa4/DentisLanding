@@ -18,8 +18,8 @@ function Home() {
       <AdvantagesPage />
       <PersonalPage />
       <AboutPage />
-      {/* <WorkPage />
-      <FeedbackPage />
+      <WorkPage />
+      {/* <FeedbackPage />
       <Address />
       <Appointments /> */}
       <SwitchContact />

@@ -3,6 +3,7 @@ import { WorksCard } from "@/components/work/WorksCard";
 import { WORK_DATA } from "@/utils/constants/work.constant";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ResponsiveWork } from "@/components/work/ResponsiveWork";
 
 export const WorkPage = () => {
   const [selectedWork, setSelectedWork] = useState(1);
@@ -22,12 +23,14 @@ export const WorkPage = () => {
   };
 
   return (
-    <div className="w-full py-10">
+    <div className="w-full py-10 sm:py-5">
       <div className="py-5 w-full flex items-center justify-center">
-        <h1 className="text-[30px] font-bold font-mono">Примеры работ</h1>
+        <h1 className="text-[30px] font-bold font-mono lg:text-[20px] sm:text-[16px]">
+          Примеры работ
+        </h1>
       </div>
-      <div className="w-full flex items-start justify-evenly gap-[100px] px-5 m-auto max-w-[1440px]">
-        <div className="w-full flex flex-col gap-5 max-w-fit ml-[100px]">
+      <div className="w-full flex items-start justify-evenly gap-[100px] px-5 m-auto max-w-[1440px] sm:hidden">
+        <div className="w-full flex flex-col gap-5 max-w-fit ml-[100px] md:ml-[30px]">
           {WORK_DATA.map((work) => (
             <WorkCard
               key={work.id}
@@ -37,7 +40,7 @@ export const WorkPage = () => {
             />
           ))}
         </div>
-        <div className="w-full flex flex-col gap-5">
+        <div className="w-full flex flex-col gap-5 md:flex-row">
           {WORK_DATA[selectedWork - 1].works.map((works, index) => (
             <motion.div
               key={index}
@@ -48,12 +51,15 @@ export const WorkPage = () => {
                 once: true,
               }}
               custom={index + 1}
-              className="max-h-[250px]"
+              className="max-h-[250px] md:max-h-fit"
             >
               <WorksCard works={works} />
             </motion.div>
           ))}
         </div>
+      </div>
+      <div className="hidden sm:block w-full max-w-[1440px] m-auto">
+        <ResponsiveWork />
       </div>
     </div>
   );
