@@ -1,3 +1,5 @@
+"use client";
+
 import { WorkCard } from "@/components/work/WorkCard";
 import { WorksCard } from "@/components/work/WorksCard";
 import { WORK_DATA } from "@/utils/constants/work.constant";
