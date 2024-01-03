@@ -34,7 +34,7 @@ export const Header = () => {
               !scrolled ? "text-[#00d6d4]" : "text-white"
             } transition duration-300 ease-in-out`}
           >
-            ESTETIC
+            ESTETIC CLINIC
           </h1>
           {/* <span
             className={`text-[16px] ${

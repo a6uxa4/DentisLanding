@@ -1,7 +1,7 @@
 const SwitchContact = () => {
   return (
-    <div className="w-[70px] h-[70px] sm:w-[40px] sm:h-[40px] bg-[#00d6d4] rounded-full fixed bottom-10 right-10 cursor-pointer flex items-center justify-center z-10 sm:right-5">
-      <div className="w-[70px] h-[70px] sm:w-[40px] sm:h-[40px] bg-[#00d6d4] opacity-60 rounded-full animate-ping absolute z-20"></div>
+    <div className="w-[70px] h-[70px] sm:w-[50px] sm:h-[50px] bg-[#00d6d4] rounded-full fixed bottom-10 right-10 cursor-pointer flex items-center justify-center z-10 sm:right-5">
+      <div className="w-[70px] h-[70px] sm:w-[50px] sm:h-[50px] bg-[#00d6d4] opacity-60 rounded-full animate-ping absolute z-20"></div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="40"
