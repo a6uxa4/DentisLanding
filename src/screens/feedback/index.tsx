@@ -15,7 +15,7 @@ export const FeedbackPage = () => {
             Наши отзывы
           </h1>
         </div>
-        <div className="h-[400px] md:h-[350px] sm:h-[250px] xs:h-[200px] w-full pl-[100px] xs:pl-0 flex max-w-[1440px]">
+        <div className="h-[400px] md:h-[350px] sm:h-[250px] xs:h-[200px] w-full pl-[100px] xs:pl-0 flex max-w-[1440px] xs:max-w-[100vw]">
           <Marquee speed={100} loop={0} pauseOnHover={true}>
             {REVIEWS.map((item, index) => (
               <FeedbackCard key={index} feedback={item} />
