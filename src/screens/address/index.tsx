@@ -1,3 +1,5 @@
+"use client";
+
 import { YMaps, Map as YandexMap, Placemark } from "@pbe/react-yandex-maps";
 
 export const Address = () => {

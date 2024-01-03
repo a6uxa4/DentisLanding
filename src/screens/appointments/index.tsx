@@ -1,3 +1,5 @@
+"use client";
+
 import { useGetPersonalQuery } from "@/services/personal.service";
 import { RECORDTYPEDATA } from "@/utils/constants/appointment.constant";
 import { Select, SelectItem, Input, Button } from "@nextui-org/react";
