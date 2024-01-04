@@ -1,7 +1,7 @@
-version: '3.9'
+version: "3.9"
 services:
   frontend:
-    image: dentapp:latest
+    image: estetic:latest
     container_name: frontend
     ports:
       - 8086:80
