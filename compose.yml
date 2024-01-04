@@ -1,8 +1,15 @@
-version: "3.9"
-
+version: '3.9'
 services:
-  fronted:
-    image: estetic-next-dev
-    container_name: fronted
+  frontend:
+    image: dentapp:latest
+    container_name: frontend
     ports:
-      - 80:80
+      - 8086:80
+    environment:
+      VITE_SERVER_URL: http://212.112.123.118:8082/api
+    networks:
+      - aksoft_default
+
+networks:
+  aksoft_default:
+    driver: bridge
