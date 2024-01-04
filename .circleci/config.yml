@@ -45,12 +45,12 @@ jobs:
       - run:
           name: Install SSH And Configure
           command: |
-            echo $SSH_PRIVATE_KEY | base64 --decode > ./privateKey.pem
-            chmod 400 privateKey.pem
+            echo $SSH_PRIVATE_KEY | base64 --decode > ./id_rsa
+            chmod 400 id_rsa
       - run:
           name: Stop Remote Docker-Compose
           command: |
-            ssh -o "StrictHostKeyChecking=no" -i ./privateKey.pem <<pipeline.parameters.username>>@$HOST '
+            ssh -o "StrictHostKeyChecking=no" -i ./id_rsa <<pipeline.parameters.username>>@$HOST '
             if [ -f <<pipeline.parameters.compose-file>> ]; then
             docker-compose -f <<pipeline.parameters.compose-file>> down
             docker rmi << pipeline.parameters.docker-container >>:latest
@@ -62,11 +62,11 @@ jobs:
       - run:
           name: Transfer Files
           command: |
-            scp -o "StrictHostKeyChecking=no" -i ./privateKey.pem ./<< pipeline.parameters.docker-container >>.tar.gz ./<<pipeline.parameters.compose-file>> <<pipeline.parameters.username>>@$HOST:~/
+            scp -o "StrictHostKeyChecking=no" -i ./id_rsa ./<< pipeline.parameters.docker-container >>.tar.gz ./<<pipeline.parameters.compose-file>> <<pipeline.parameters.username>>@$HOST:~/
       - run:
           name: Decompress Docker Image | Run Compose
           command: |
-            ssh -o "StrictHostKeyChecking=no" -i ./privateKey.pem <<pipeline.parameters.username>>@$HOST '
+            ssh -o "StrictHostKeyChecking=no" -i ./id_rsa <<pipeline.parameters.username>>@$HOST '
             gunzip -c ./<< pipeline.parameters.docker-container >>.tar.gz | docker load;
             rm ./<< pipeline.parameters.docker-container >>.tar.gz;
             docker-compose -f <<pipeline.parameters.compose-file>> up -d;
