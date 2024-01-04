@@ -4,7 +4,15 @@ parameters:
   docker-container:
     type: string
     default: "estetic-clinic-next"
-    description: "Docker container name for estetic Next Js"
+    description: "Docker container name for estetic of Dev"
+  username:
+    type: string
+    default: "aksoft"
+    description: "SSH host username"
+  compose-file:
+    type: string
+    default: "compose.yml"
+    description: "Docker compose filename"
 
 jobs:
   deploy-to-dev:
@@ -22,16 +30,12 @@ jobs:
           name: Compress Docker Image
           command: |
             docker save << pipeline.parameters.docker-container >>:latest | gzip > << pipeline.parameters.docker-container >>.tar.gz
-      - run:
-          name: Update Docker-compose.yml
-          command: |
-            sed -i 's@#image@<< pipeline.parameters.docker-container >>:latest@g' docker-compose.yml
       - run: ls -lh
       - persist_to_workspace:
           root: .
           paths:
             - << pipeline.parameters.docker-container >>.tar.gz
-            - docker-compose.yml
+            - <<pipeline.parameters.compose-file>>
   transfer-and-run:
     docker:
       - image: circleci/node:14
@@ -46,27 +50,27 @@ jobs:
       - run:
           name: Stop Remote Docker-Compose
           command: |
-            ssh -o "StrictHostKeyChecking=no" -i ./privateKey.pem ubuntu@$HOST '
-            if [ -f docker-compose.yml ]; then
-            sudo docker-compose down --rmi all
-            sudo rm docker-compose.yml
+            ssh -o "StrictHostKeyChecking=no" -i ./privateKey.pem <<pipeline.parameters.username>>@$HOST '
+            if [ -f <<pipeline.parameters.compose-file>> ]; then
+            docker-compose -f <<pipeline.parameters.compose-file>> down
+            docker rmi << pipeline.parameters.docker-container >>:latest
+            rm <<pipeline.parameters.compose-file>>
             else
-            echo "docker-compose.yml not found"
+            echo "<<pipeline.parameters.compose-file>> not found"
             fi
             '
       - run:
           name: Transfer Files
           command: |
-            scp -o "StrictHostKeyChecking=no" -i ./privateKey.pem ./<< pipeline.parameters.docker-container >>.tar.gz ./docker-compose.yml ubuntu@$HOST:~/
+            scp -o "StrictHostKeyChecking=no" -i ./privateKey.pem ./<< pipeline.parameters.docker-container >>.tar.gz ./<<pipeline.parameters.compose-file>> <<pipeline.parameters.username>>@$HOST:~/
       - run:
           name: Decompress Docker Image | Run Compose
           command: |
-            ssh -o "StrictHostKeyChecking=no" -i ./privateKey.pem ubuntu@$HOST '
-            sudo gunzip -c ./<< pipeline.parameters.docker-container >>.tar.gz | sudo docker load
-            sudo rm ./<< pipeline.parameters.docker-container >>.tar.gz
-            sudo docker-compose up -d
+            ssh -o "StrictHostKeyChecking=no" -i ./privateKey.pem <<pipeline.parameters.username>>@$HOST '
+            gunzip -c ./<< pipeline.parameters.docker-container >>.tar.gz | docker load;
+            rm ./<< pipeline.parameters.docker-container >>.tar.gz;
+            docker-compose -f <<pipeline.parameters.compose-file>> up -d;
             '
-
 workflows:
   deploy-to-development:
     jobs:
