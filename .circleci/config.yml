@@ -1,13 +1,75 @@
 version: 2.1
 
 parameters:
-  docker-container:
+  docker-container-dev:
     type: string
     default: "estetic-clinic-next"
-    description: "Docker container name for estetic Next Js"
+    description: "Docker container name for DentApp Dev"
+  compose-file-dev:
+    type: string
+    default: "docker-compose.yml"
+    description: "Docker compose filename"
+  username:
+    type: string
+    default: "root"
+    description: "SSH host username"
 
 jobs:
-  deploy-to-dev:
+  deploy-to-development:
+    docker:
+      - image: circleci/node:14
+      - image: docker:20.10.9
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build Docker Image
+          command: |
+            docker build -t << pipeline.parameters.docker-container-dev >>:latest .
+      - run:
+          name: Compress Docker Image
+          command: |
+            docker save << pipeline.parameters.docker-container-dev >>:latest | gzip > << pipeline.parameters.docker-container-dev >>.tar.gz
+      - run: ls -lh
+      - persist_to_workspace:
+          root: .
+          paths:
+            - << pipeline.parameters.docker-container-dev >>.tar.gz
+            - <<pipeline.parameters.compose-file-dev>>
+  transfer-and-run:
+    docker:
+      - image: circleci/node:14
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Install SSH And Configure
+          command: |
+            echo $HOSTSSH_PRIVATE_KEY	 | base64 --decode > ./id_rsa
+            chmod 400 id_rsa
+      - run:
+          name: Stop Remote Docker-Compose
+          command: |
+            ssh -o "StrictHostKeyChecking=no" -i ./id_rsa <<pipeline.parameters.username>>@$HOST '
+            if [ -f <<pipeline.parameters.compose-file-dev>> ]; then
+            docker-compose -f <<pipeline.parameters.compose-file-dev>> down --rmi all
+            rm <<pipeline.parameters.compose-file-dev>>
+            else
+            echo "<<pipeline.parameters.compose-file-dev>> not found"
+            fi
+            '
+      - run:
+          name: Transfer Files
+          command: |
+            scp -o "StrictHostKeyChecking=no" -i ./id_rsa ./<< pipeline.parameters.docker-container-dev >>.tar.gz ./<<pipeline.parameters.compose-file-dev>> <<pipeline.parameters.username>>@$HOST:~/
+      - run:
+          name: Decompress Docker Image | Run Compose
+          command: |
+            ssh -o "StrictHostKeyChecking=no" -i ./id_rsa <<pipeline.parameters.username>>@$HOST '
+            gunzip -c ./<< pipeline.parameters.docker-container-dev >>.tar.gz | docker load
+            rm ./<< pipeline.parameters.docker-container-dev >>.tar.gz
+            docker-compose -f <<pipeline.parameters.compose-file-dev>> up -d                    
+            'deploy-to-production:
     docker:
       - image: circleci/node:14
       - image: docker:20.10.9
@@ -25,14 +87,14 @@ jobs:
       - run:
           name: Update Docker-compose.yml
           command: |
-            sed -i 's@#image@<< pipeline.parameters.docker-container >>:latest@g' docker-compose.yml
+            sed -i 's@#image@<< pipeline.parameters.docker-container >>:latest@g' docker-compose-prod.yml
       - run: ls -lh
       - persist_to_workspace:
           root: .
           paths:
             - << pipeline.parameters.docker-container >>.tar.gz
-            - docker-compose.yml
-  transfer-and-run:
+            - docker-compose-prod.yml
+  transfer-and-run-prod:
     docker:
       - image: circleci/node:14
     steps:
@@ -41,44 +103,43 @@ jobs:
       - run:
           name: Install SSH And Configure
           command: |
-            echo $SSH_PRIVATE_KEY | base64 --decode > ./id_rsa
-            chmod 400 id_rsa
+            echo $SSH_PRIVATE_KEY | base64 --decode > ./privateKey.pem
+            chmod 400 privateKey.pem
       - run:
           name: Stop Remote Docker-Compose
           command: |
-            ssh -o "StrictHostKeyChecking=no" -i ./id_rsa ./root@$HOST '
-            if [ -f docker-compose.yml ]; then
+            ssh -o "StrictHostKeyChecking=no" -i ./privateKey.pem ubuntu@$HOST '
+            if [ -f docker-compose-prod.yml ]; then
             sudo docker-compose down --rmi all
-            sudo rm docker-compose.yml
+            sudo rm docker-compose-prod.yml
             else
-            echo "docker-compose.yml not found"
+            echo "docker-compose-prod.yml not found"
             fi
             '
       - run:
           name: Transfer Files
           command: |
-            scp -o "StrictHostKeyChecking=no" -i ./id_rsa ./<< pipeline.parameters.docker-container >>.tar.gz ./docker-compose.yml root@$HOST:~/
+            scp -o "StrictHostKeyChecking=no" -i ./privateKey.pem ./<< pipeline.parameters.docker-container >>.tar.gz ./docker-compose-prod.yml ubuntu@$HOST:~/
       - run:
           name: Decompress Docker Image | Run Compose
           command: |
-            ssh -o "StrictHostKeyChecking=no" -i ./id_rsa root@$HOST '
+            ssh -o "StrictHostKeyChecking=no" -i ./privateKey.pem ubuntu@$HOST '
             sudo gunzip -c ./<< pipeline.parameters.docker-container >>.tar.gz | sudo docker load
             sudo rm ./<< pipeline.parameters.docker-container >>.tar.gz
-            sudo docker-compose up -d
-            '
+            sudo docker-compose -f docker-compose-prod.yml up -d'
 
 workflows:
-  deploy-to-development:
+  deploy-to-local-dev:
     jobs:
-      - deploy-to-dev:
+      - deploy-to-development:
           filters:
             branches:
               only:
-                - development
+                - dev
       - transfer-and-run:
           requires:
-            - deploy-to-dev
+            - deploy-to-development
           filters:
             branches:
               only:
-                - development
+                - dev
