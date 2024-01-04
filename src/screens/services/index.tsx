@@ -6,8 +6,11 @@ import { SubServicesCard } from "@/components/services/SubServicesCard";
 import { SERVICES_DATA } from "@/utils/constants/services.constant";
 import { motion } from "framer-motion";
 import { ResponsiveServices } from "@/components/services/ResponsiveServices";
+import { useSectionInView } from "@/hooks/useSectionInView";
 
 export const ServicesPage = () => {
+  const { ref } = useSectionInView("Услуги");
+
   const [activeService, setActiveService] = useState(1);
 
   const fadeInAnimationVariants = {
@@ -25,7 +28,7 @@ export const ServicesPage = () => {
   };
 
   return (
-    <div className="w-full py-10 sm:py-5">
+    <div ref={ref} id="services" className="w-full py-10 sm:py-5">
       <div className="py-5 w-full flex items-center justify-center">
         <h1 className="text-[30px] font-bold font-mono lg:text-[20px] sm:text-[16px]">
           Наши Услуги

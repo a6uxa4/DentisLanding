@@ -9,7 +9,7 @@ export const Footer = () => {
             onClick={() => (window.location.href = `https://cheber.online`)}
             className="text-[23px] flex items-center font-medium text-barber-color title-font cursor-pointer"
           >
-            ESTETIC
+            ESTETIC CLINIC
           </div>
           <p className="text-barber-color max-w-[350px] xs:text-xs xs:max-w-[230px]">
             Искусство здоровой улыбки начинается здесь, в нашей стомотологии

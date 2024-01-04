@@ -34,4 +34,4 @@ export const PERSONALS = [
     specialization:
       "Стоматолог-ортодонт, Cтоматолог-имплантолог, Врач-стоматолог-терапевт",
   },
-];
+] as const;

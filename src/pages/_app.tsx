@@ -5,12 +5,15 @@ import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import "swiper/css";
 import "react-vertical-timeline-component/style.min.css";
+import ActiveSectionContextProvider from "@/providers/ActiveSection";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <NextUIProvider>
-        <Component {...pageProps} />
+        <ActiveSectionContextProvider>
+          <Component {...pageProps} />
+        </ActiveSectionContextProvider>
       </NextUIProvider>
     </Provider>
   );

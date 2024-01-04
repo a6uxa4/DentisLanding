@@ -230,4 +230,4 @@ export const SERVICES_DATA = [
       },
     ],
   },
-];
+] as const;

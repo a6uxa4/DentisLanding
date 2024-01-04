@@ -8,7 +8,7 @@ const appointmentService = createApi({
     postAppointment: builder.mutation<any, any>({
       query: (body) => {
         return {
-          url: "/appointments",
+          url: "/calendars/onlineRecord",
           method: "POST",
           body: body,
         };

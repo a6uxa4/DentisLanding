@@ -1,14 +1,17 @@
-import CustomSVG from "@/components/UI/CustomSvg/CustomSvg";
-import { HEADER_NAV } from "@/utils/constants/header.constant";
-import clsx from "clsx";
-import { useEffect, useState } from "react";
+"use client";
 
-import { ScheduleContainer } from "../../components/header/Schedule";
-import { Call } from "../../components/header/Call";
+import { useEffect, useState } from "react";
+import { NAV_LINKS } from "@/utils/constants/header.constant";
+import clsx from "clsx";
+import { Button } from "@nextui-org/react";
+import { useActiveSectionContext } from "@/providers/ActiveSection";
+import Link from "next/link";
 
 export const Header = () => {
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSectionContext();
+
   const [scrolled, setScrolled] = useState<boolean>(false);
-  const [selectedHeader, setSelectedHeader] = useState<null | number>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,68 +26,58 @@ export const Header = () => {
 
   return (
     <header
-      className={`fixed z-20 w-full h-[50px] ${
+      className={`fixed z-20 w-full h-[70px] ${
         scrolled ? "bg-[#00d6d4]" : "bg-transparent"
       } transition duration-300 ease-in-out`}
     >
-      <div className="w-full h-full max-w-[1440px] m-auto px-4 flex relative">
-        <div className="w-full h-full flex items-center justify-center">
+      <div className="w-full h-full max-w-[1440px] m-auto px-10 flex relative">
+        <div className="w-full h-full flex items-center justify-between">
           <h1
             className={`text-[30px] font-bold ${
               !scrolled ? "text-[#00d6d4]" : "text-white"
             } transition duration-300 ease-in-out`}
           >
-            ESTETIC CLINIC
+            ESTETIC • CLINIC
           </h1>
-          {/* <span
-            className={`text-[16px] ${
-              !scrolled ? "text-[#00d6d4]" : "text-white"
-            } transition duration-300 ease-in-out`}
-          >
-            Стоматологическая клиника №1 в Бишкеке
-          </span> */}
-        </div>
-        {/* <div className="w-full h-full flex items-center justify-around">
-          {HEADER_NAV.map((item) => (
-            <div
-              onMouseEnter={() => setSelectedHeader(item.id)}
-              onMouseLeave={() => {
-                if (selectedHeader === 3) {
-                  return;
-                } else {
-                  setSelectedHeader(null);
-                }
-              }}
-              key={item.id}
+          <div className="flex items-center gap-5">
+            {NAV_LINKS.slice(1).map((nav) => (
+              <Link
+                href={nav.hash}
+                onClick={() => {
+                  setActiveSection(nav.name);
+                  setTimeOfLastClick(Date.now());
+                }}
+                className={clsx(
+                  "px-3.5 py-1.5 text-base font-normal skew-x-[-10deg] rounded-lg cursor-pointer transition",
+                  {
+                    "hover:bg-white hover:text-[#00d6d4] text-white font-medium":
+                      scrolled,
+                  },
+                  {
+                    "bg-[#eef9f9] hover:bg-[#00d6d4] hover:text-white":
+                      !scrolled,
+                  },
+                  {
+                    "bg-white !text-[#00d6d4]": activeSection === nav.name,
+                  }
+                )}
+              >
+                {nav.name}
+              </Link>
+            ))}
+          </div>
+          <div className="w-fit h-full flex items-center justify-center">
+            <Button
               className={clsx(
-                "flex gap-2 w-fit h-fit px-3 py-2 rounded-md cursor-pointer transition duration-300 ease-in-out",
+                "skew-x-[-10deg] bg-[#00d6d4] text-white font-semibold text-[16px]",
                 {
-                  "fill-[#00d6d4] text-[#00d6d4] hover:bg-[#00d6d4] hover:text-white hover:fill-white":
-                    !scrolled,
-                },
-                {
-                  "fill-white text-white hover:bg-white hover:text-[#00d6d4] hover:fill-[#00d6d4]":
-                    scrolled,
+                  "bg-white text-[#00d6d4]": scrolled,
                 }
               )}
             >
-              <CustomSVG
-                paths={item.icon.paths}
-                width={item.icon.width}
-                height={item.icon.height}
-              />
-              {item.name}
-            </div>
-          ))}
-        </div> */}
-        <div className="absolute w-full bottom-[-240px] left-[69%]">
-          {selectedHeader === 2 && <ScheduleContainer />}
-        </div>
-        <div
-          className="absolute w-full bottom-[-180px] left-[84%]"
-          onMouseLeave={() => setSelectedHeader(null)}
-        >
-          {selectedHeader === 3 && <Call />}
+              Записаться на прием
+            </Button>
+          </div>
         </div>
       </div>
     </header>

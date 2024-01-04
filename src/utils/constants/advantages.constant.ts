@@ -106,4 +106,4 @@ export const ADVANTAGES = [
       ],
     },
   },
-];
+] as const;

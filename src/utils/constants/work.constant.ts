@@ -91,4 +91,4 @@ export const WORK_DATA = [
     name: "Реставрация зубов",
     works: [],
   },
-];
+] as const;

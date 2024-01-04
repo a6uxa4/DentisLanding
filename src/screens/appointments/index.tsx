@@ -1,11 +1,32 @@
 "use client";
 
+import { usePostAppointmentMutation } from "@/services/appoinment.service";
 import { useGetPersonalQuery } from "@/services/personal.service";
 import { RECORDTYPEDATA } from "@/utils/constants/appointment.constant";
 import { Select, SelectItem, Input, Button } from "@nextui-org/react";
 
 export const Appointments = () => {
   const { data: PersonaData = [] } = useGetPersonalQuery(1);
+  const [handlePost] = usePostAppointmentMutation();
+  const data = {
+    userId: 50,
+    firstName: "Abuali",
+    lastName: "Melisov",
+    phoneNumber: "996593232423",
+    startDate: "2024-01-10",
+    startTime: "11:00:00",
+    endTime: "11:30:00",
+    recordType: "TREATMENT",
+  };
+
+  const handleClick = async () => {
+    try {
+      const response = await handlePost(data).unwrap();
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   console.log(PersonaData);
 
@@ -53,21 +74,15 @@ export const Appointments = () => {
               </SelectItem>
             ))}
           </Select>
-          <Button className="max-w-xs bg-[#f4f4f5]" radius="sm">
+          <Button
+            className="max-w-xs bg-[#f4f4f5]"
+            radius="sm"
+            onClick={handleClick}
+          >
             Записаться
           </Button>
         </div>
       </div>
     </div>
   );
-};
-
-const data = {
-  userId: 8,
-  firstName: "Abuali",
-  lastName: "Melisov",
-  startDate: "2023-12-27",
-  startTime: "09:00:00",
-  endTime: "09:30:00",
-  recordType: "TREATMENT",
 };

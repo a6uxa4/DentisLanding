@@ -11,4 +11,4 @@ export const RECORDTYPEDATA = [
   { value: "ORTHODONTICS", label: "Ортодонтия" },
   { value: "PERIODONTOLOGY", label: "Пародонтология" },
   { value: "SURGERY", label: "Хирургия" },
-];
+] as const;

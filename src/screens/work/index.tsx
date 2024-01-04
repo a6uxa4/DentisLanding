@@ -6,8 +6,10 @@ import { WORK_DATA } from "@/utils/constants/work.constant";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { ResponsiveWork } from "@/components/work/ResponsiveWork";
+import { useSectionInView } from "@/hooks/useSectionInView";
 
 export const WorkPage = () => {
+  const { ref } = useSectionInView("Примеры работ");
   const [selectedWork, setSelectedWork] = useState(1);
 
   const fadeInAnimationVariants = {
@@ -25,7 +27,7 @@ export const WorkPage = () => {
   };
 
   return (
-    <div className="w-full py-10 sm:py-5">
+    <div ref={ref} id="works" className="w-full py-10 sm:py-5">
       <div className="py-5 w-full flex items-center justify-center">
         <h1 className="text-[30px] font-bold font-mono lg:text-[20px] sm:text-[16px]">
           Примеры работ
