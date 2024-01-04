@@ -42,6 +42,7 @@ export const Header = () => {
           <div className="flex items-center gap-5">
             {NAV_LINKS.slice(1).map((nav) => (
               <Link
+                key={nav.hash}
                 href={nav.hash}
                 onClick={() => {
                   setActiveSection(nav.name);
