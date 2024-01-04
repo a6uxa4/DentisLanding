@@ -4,37 +4,10 @@ import { useGetPersonalQuery } from "@/services/personal.service";
 import { RECORDTYPEDATA } from "@/utils/constants/appointment.constant";
 import { Select, SelectItem, Input, Button } from "@nextui-org/react";
 
-export const animals = [
-  {
-    label: "Cat",
-    value: "cat",
-    description: "The second most popular pet in the world",
-  },
-  {
-    label: "Dog",
-    value: "dog",
-    description: "The most popular pet in the world",
-  },
-  {
-    label: "Zebra",
-    value: "zebra",
-    description: "A several species of African equids",
-  },
-  {
-    label: "Shark",
-    value: "shark",
-    description:
-      "A group of elasmobranch fish characterized by a cartilaginous skeleton",
-  },
-  {
-    label: "Crocodile",
-    value: "crocodile",
-    description: "A large semiaquatic reptile",
-  },
-];
-
 export const Appointments = () => {
-  const { data } = useGetPersonalQuery();
+  const { data: PersonaData = [] } = useGetPersonalQuery(1);
+
+  console.log(PersonaData);
 
   return (
     <div className="w-[100vw] bg-[#eef9f9] relative flex justify-center items-start py-10 text-center">
@@ -63,9 +36,9 @@ export const Appointments = () => {
             placeholder="Выберите доктора"
             className="max-w-xs"
           >
-            {animals.map((animal) => (
-              <SelectItem key={animal.value} value={animal.value}>
-                {animal.label}
+            {PersonaData.map((animal: any) => (
+              <SelectItem key={animal.id} value={animal.id}>
+                {animal.fullName}
               </SelectItem>
             ))}
           </Select>
@@ -90,6 +63,9 @@ export const Appointments = () => {
 };
 
 const data = {
+  userId: 8,
+  firstName: "Abuali",
+  lastName: "Melisov",
   startDate: "2023-12-27",
   startTime: "09:00:00",
   endTime: "09:30:00",

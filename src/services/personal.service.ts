@@ -5,8 +5,8 @@ const personalService = createApi({
   reducerPath: "personalApi",
   baseQuery: baseQueryWithReauth,
   endpoints: (builder) => ({
-    getPersonal: builder.query<any, void>({
-      query: () => "/calendars/users",
+    getPersonal: builder.query<any, any>({
+      query: (clinicId) => `/calendars/${clinicId}/doctors`,
     }),
   }),
 });

@@ -4,7 +4,7 @@ parameters:
   docker-container:
     type: string
     default: "estetic-clinic-next"
-    description: "Docker container name for Cheber Next Js"
+    description: "Docker container name for estetic Next Js"
 
 jobs:
   deploy-to-dev:
@@ -41,12 +41,12 @@ jobs:
       - run:
           name: Install SSH And Configure
           command: |
-            echo $SSH_PRIVATE_KEY | base64 --decode > ./privateKey.pem
-            chmod 400 privateKey.pem
+            echo $SSH_PRIVATE_KEY | base64 --decode > ./id_rsa
+            chmod 400 id_rsa
       - run:
           name: Stop Remote Docker-Compose
           command: |
-            ssh -o "StrictHostKeyChecking=no" -i ./privateKey.pem ubuntu@$HOST '
+            ssh -o "StrictHostKeyChecking=no" -i ./id_rsa ./ubuntu@$HOST '
             if [ -f docker-compose.yml ]; then
             sudo docker-compose down --rmi all
             sudo rm docker-compose.yml
@@ -57,11 +57,11 @@ jobs:
       - run:
           name: Transfer Files
           command: |
-            scp -o "StrictHostKeyChecking=no" -i ./privateKey.pem ./<< pipeline.parameters.docker-container >>.tar.gz ./docker-compose.yml ubuntu@$HOST:~/
+            scp -o "StrictHostKeyChecking=no" -i ./id_rsa ./<< pipeline.parameters.docker-container >>.tar.gz ./docker-compose.yml ubuntu@$HOST:~/
       - run:
           name: Decompress Docker Image | Run Compose
           command: |
-            ssh -o "StrictHostKeyChecking=no" -i ./privateKey.pem ubuntu@$HOST '
+            ssh -o "StrictHostKeyChecking=no" -i ./id_rsa ubuntu@$HOST '
             sudo gunzip -c ./<< pipeline.parameters.docker-container >>.tar.gz | sudo docker load
             sudo rm ./<< pipeline.parameters.docker-container >>.tar.gz
             sudo docker-compose up -d
