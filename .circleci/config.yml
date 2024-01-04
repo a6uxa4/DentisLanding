@@ -4,7 +4,7 @@ parameters:
   docker-container:
     type: string
     default: "estetic-next-dev"
-    description: "Docker container name for Cheber Next Js"
+    description: "Docker container name for Estetic Next Js"
 
 jobs:
   deploy-to-dev:
