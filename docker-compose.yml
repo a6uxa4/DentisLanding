@@ -1,7 +1,8 @@
 version: "3.9"
+
 services:
   fronted:
-    image: breath-fronted-production
+    image: estetic-next-dev
     container_name: fronted
     ports:
       - 80:80
