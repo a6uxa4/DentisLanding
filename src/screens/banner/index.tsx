@@ -10,10 +10,10 @@ export const BannerPage = () => {
     <div
       ref={ref}
       id="HOME"
-      className="w-[100vw] h-[600px] relative flex justify-center items-center bg-[#eef9f9] bg-fixed"
+      className="w-[100vw] h-[600px] relative flex justify-center items-center bg-[#eef9f9] bg-fixed md:h-[400px]"
     >
-      <div className="w-full flex items-center justify-between px-11 max-w-[1440px] blur-none">
-        <div className="w-full min-w-[650px] max-w-[650px] font-mono font-black text-[40px] leading-[50px] tracking-wide">
+      <div className="w-full flex items-center justify-between px-11 max-w-[1440px] blur-none md:justify-center">
+        <div className="w-full min-w-[650px] max-w-[650px] font-mono font-black text-[40px] leading-[50px] tracking-wide md:text-[30px] md:max-w-[100vw] md:px-5 md:min-w-[100vw] xs:text-[20px]">
           <Typewriter
             words={[
               "Превосходный опыт",
