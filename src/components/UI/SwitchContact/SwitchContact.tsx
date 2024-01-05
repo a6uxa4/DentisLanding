@@ -19,7 +19,7 @@ const SwitchContact = () => {
   };
 
   return (
-    <>
+    <>npm
       <motion.div
         onClick={() => setOpen(!open)}
         whileTap={{ scale: 0.8 }}
@@ -48,8 +48,8 @@ const SwitchContact = () => {
         animate={
           open ? LogoAnimate(-100, 0, 1, 0) : LogoAnimate(-15, -15, 0.1, 360)
         }
-        transition={{ duration: 0.25 }}
-        className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[40px] right-[40px] sm:right-2  flex z-10 justify-center items-center"
+        transition={{ delay:!open? 0 : 0.2}}
+        className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[40px] right-[40px] sm:right-2  flex z-10 justify-center items-center shadow-lg shadow-[#58aab7]"
       >
         <ImWhatsapp color="white" className="w-[20px] h-[20px] sm:w-[16px] sm:h-[16px]" />
       </motion.a>
@@ -60,8 +60,8 @@ const SwitchContact = () => {
         animate={
           open ? LogoAnimate(-100, 0, 1, 0) : LogoAnimate(-20, 40, 0.1, 360)
         }
-        transition={{ duration: 0.3 }}
-        className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[96px] right-[32px] sm:bottom-[85px] sm:right-[0px]  flex z-10 justify-center items-center"
+        transition={{ delay:!open? 0 : 0.25}}
+        className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[96px] right-[32px] sm:bottom-[85px] sm:right-[0px]  flex z-10 justify-center items-center shadow-lg shadow-[#58aab7]"
       >
         <GrInstagram color="white" className="w-[20px] h-[20px] sm:w-[16px] sm:h-[16px]" />
       </motion.a>
@@ -72,8 +72,8 @@ const SwitchContact = () => {
         animate={
           open ? LogoAnimate(-100, 0, 1, 0) : LogoAnimate(-60, 80, 0.1, 360)
         }
-        transition={{ duration: 0.35 }}
-        className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[134px] right-[-6px] sm:bottom-[120px] sm:right-[-35px]  flex z-10 justify-center items-center"
+        transition={{ delay: !open? 0 :0.3 }}
+        className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[134px] right-[-6px] sm:bottom-[120px] sm:right-[-35px]  flex z-10 justify-center items-center shadow-lg shadow-[#58aab7]"
       >
         <BiLogoTelegram color="white" className="w-[20px] h-[20px] sm:w-[16px] sm:h-[16px]" />
       </motion.a>
@@ -84,8 +84,8 @@ const SwitchContact = () => {
         animate={
           open ? LogoAnimate(-100, 0, 1, 0) : LogoAnimate(-115, 86, 0.1, 360)
         }
-        transition={{ duration: 0.4 }}
-        className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[142px] right-[-60px] sm:bottom-[128px] sm:right-[-80px] flex z-10 justify-center items-center"
+        transition={{ delay:!open? 0: 0.35}}
+        className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[142px] right-[-60px] sm:bottom-[128px] sm:right-[-80px] flex z-10 justify-center items-center shadow-lg shadow-[#58aab7]"
       >
         <MdPhoneForwarded color="white" className="w-[20px] h-[20px] sm:w-[16px] sm:h-[16px]" />
       </motion.a>
