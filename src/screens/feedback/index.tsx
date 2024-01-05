@@ -14,7 +14,7 @@ export const FeedbackPage = () => {
     <div
       ref={ref}
       id="feedbacks"
-      className="w-[100vw] bg-[#EEF9F9] relative flex justify-center items-start py-10 bg-gold-400 sm:py-5"
+      className="w-[100vw] bg-[#EEF9F9] relative flex justify-center items-start py-10 bg-gold-400 sm:py-5 scroll-mt-24"
     >
       <div className="flex flex-col gap-2">
         <div className="py-5 w-full flex items-center justify-center">

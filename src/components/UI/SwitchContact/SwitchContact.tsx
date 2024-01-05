@@ -8,18 +8,25 @@ import { ImWhatsapp } from "react-icons/im";
 const SwitchContact = () => {
   const [open, setOpen] = useState<boolean>(false);
 
-  const LogoAnimate = (x: number, y: number, size: number, rotate: number) => {
+  const LogoAnimate = (
+    x: number,
+    y: number,
+    scale: number,
+    rotate: number,
+    opacity: number
+  ) => {
     const variant = {
-      x: x,
-      y: y,
-      scale: size,
-      rotate: rotate,
+      opacity,
+      x,
+      y,
+      scale,
+      rotate,
     };
     return variant;
   };
 
   return (
-    <>npm
+    <>
       <motion.div
         onClick={() => setOpen(!open)}
         whileTap={{ scale: 0.8 }}
@@ -42,52 +49,84 @@ const SwitchContact = () => {
         </svg>
       </motion.div>
       <motion.a
-        href="https://api.whatsapp.com/send/?phone=770244527&text=Здравствуйте%2C+у+меня+есть+вопрос"
+        href="https://wa.me/996999554455"
         target="_blank"
-        whileHover={{ scale: 1.2}}
+        whileHover={{ scale: 1.2 }}
+        initial={{
+          opacity: 0,
+        }}
         animate={
-          open ? LogoAnimate(-100, 0, 1, 0) : LogoAnimate(-15, -15, 0.1, 360)
+          open
+            ? LogoAnimate(-100, 0, 1, 0, 1)
+            : LogoAnimate(-15, -15, 0.1, 360, 0)
         }
-        transition={{ delay:!open? 0 : 0.2}}
+        transition={{ delay: !open ? 0 : 0.2 }}
         className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[40px] right-[40px] sm:right-2  flex z-10 justify-center items-center shadow-lg shadow-[#58aab7]"
       >
-        <ImWhatsapp color="white" className="w-[20px] h-[20px] sm:w-[16px] sm:h-[16px]" />
+        <ImWhatsapp
+          color="white"
+          className="w-[20px] h-[20px] sm:w-[16px] sm:h-[16px]"
+        />
       </motion.a>
       <motion.a
-        href="http://instagram.com/_u/{__esmik}/"
+        href="https://www.instagram.com/estetic_clinik/"
         target="_blank"
-        whileHover={{ scale: 1.2}}
+        whileHover={{ scale: 1.2 }}
+        initial={{
+          opacity: 0,
+        }}
         animate={
-          open ? LogoAnimate(-100, 0, 1, 0) : LogoAnimate(-20, 40, 0.1, 360)
+          open
+            ? LogoAnimate(-100, 0, 1, 0, 1)
+            : LogoAnimate(-20, 40, 0.1, 360, 0)
         }
-        transition={{ delay:!open? 0 : 0.25}}
+        transition={{ delay: !open ? 0 : 0.25 }}
         className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[96px] right-[32px] sm:bottom-[85px] sm:right-[0px]  flex z-10 justify-center items-center shadow-lg shadow-[#58aab7]"
       >
-        <GrInstagram color="white" className="w-[20px] h-[20px] sm:w-[16px] sm:h-[16px]" />
+        <GrInstagram
+          color="white"
+          className="w-[20px] h-[20px] sm:w-[16px] sm:h-[16px]"
+        />
       </motion.a>
       <motion.a
-       href="tg://msg?text=<?php echo urlencode( '<TEXT>' ); ?>&to=<770244527>"
+        href="https://t.me/Estetic_clinik"
         target="_blank"
-        whileHover={{ scale: 1.2}}
+        whileHover={{ scale: 1.2 }}
+        initial={{
+          opacity: 0,
+        }}
         animate={
-          open ? LogoAnimate(-100, 0, 1, 0) : LogoAnimate(-60, 80, 0.1, 360)
+          open
+            ? LogoAnimate(-100, 0, 1, 0, 1)
+            : LogoAnimate(-60, 80, 0.1, 360, 0)
         }
-        transition={{ delay: !open? 0 :0.3 }}
+        transition={{ delay: !open ? 0 : 0.3 }}
         className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[134px] right-[-6px] sm:bottom-[120px] sm:right-[-35px]  flex z-10 justify-center items-center shadow-lg shadow-[#58aab7]"
       >
-        <BiLogoTelegram color="white" className="w-[20px] h-[20px] sm:w-[16px] sm:h-[16px]" />
+        <BiLogoTelegram
+          color="white"
+          className="w-[20px] h-[20px] sm:w-[16px] sm:h-[16px]"
+        />
       </motion.a>
       <motion.a
         target="_blank"
-        href="tel:+996770244527"
-        whileHover={{ scale: 1.2}}
+        href="tel:+996999554455"
+        whileHover={{ scale: 1.2 }}
+        initial={{
+          opacity: 0,
+        }}
         animate={
-          open ? LogoAnimate(-100, 0, 1, 0) : LogoAnimate(-115, 86, 0.1, 360)
+          open
+            ? LogoAnimate(-100, 0, 1, 0, 1)
+            : LogoAnimate(-115, 86, 0.1, 360, 0)
         }
-        transition={{ delay:!open? 0: 0.35}}
+        transition={{ delay: !open ? 0 : 0.35 }}
         className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[142px] right-[-60px] sm:bottom-[128px] sm:right-[-80px] flex z-10 justify-center items-center shadow-lg shadow-[#58aab7]"
       >
-        <MdPhoneForwarded color="white" className="w-[20px] h-[20px] sm:w-[16px] sm:h-[16px]" />
+        <MdPhoneForwarded
+          color="white"
+          className="w-[20px] h-[20px] sm:w-[16px] sm:h-[16px]"
+        />
       </motion.a>
     </>
   );

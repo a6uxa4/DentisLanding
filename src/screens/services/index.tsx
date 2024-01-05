@@ -28,7 +28,7 @@ export const ServicesPage = () => {
   };
 
   return (
-    <div ref={ref} id="services" className="w-full py-10 sm:py-5">
+    <div ref={ref} id="services" className="w-full py-10 sm:py-5 scroll-mt-24">
       <div className="py-5 w-full flex items-center justify-center">
         <h1 className="text-[30px] font-bold font-mono lg:text-[20px] sm:text-[16px]">
           Наши Услуги
