@@ -28,7 +28,6 @@ export const Appointments = () => {
     }
   };
 
-  // this is my appointments for patients online appointmentsre
 
   return (
     <div className="w-[100vw] bg-[#eef9f9] relative flex justify-center items-start py-10 text-center">
