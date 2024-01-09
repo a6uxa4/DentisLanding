@@ -66,36 +66,43 @@ export const SERVICES_DATA = [
     },
     subServices: [
       {
+        id: 1,
         name: "Чистка зубов",
         icon: CleaningTeeth,
         photo: CleaningTeethPhoto,
       },
       {
+        id: 2,
         name: "Лечение зубов",
         icon: PainTeeth,
         photo: PainTeethPhoto,
       },
       {
+        id: 3,
         name: "Лечение кариеса",
         icon: CariesTeeth,
         photo: CariesTeethPhoto,
       },
       {
+        id: 4,
         name: "Лечение без боли и страха",
         icon: NotPainTeeth,
         photo: NotPainteethPhoto,
       },
       {
+        id: 5,
         name: "Лечение каналов — пульпита и периодонтита",
         icon: PulpitTeeth,
         photo: PulpitTeethPhoto,
       },
       {
+        id: 6,
         name: "Лечение пародонтита",
         icon: PeriodintTeeth,
         photo: PeriodintTeethPhoto,
       },
       {
+        id: 7,
         name: "Отбелить зубы",
         icon: BlichTeeth,
         photo: BlichTeethPhoto,
@@ -128,26 +135,31 @@ export const SERVICES_DATA = [
     },
     subServices: [
       {
+        id: 8,
         name: "Поставить коронку",
         icon: CrownTeeth,
         photo: CrownTeethPhoto,
       },
       {
+        id: 9,
         name: "Поставить имплант",
         icon: ImplantTeeth,
         photo: ImplantTeethPhoto,
       },
       {
+        id: 10,
         name: "Эстетические реставрации",
         icon: RestarationTeeth,
         photo: RestarationTeethPhoto,
       },
       {
+        id: 11,
         name: "Установить виниры",
         icon: VeneersTeeth,
         photo: VeneersTeethPhoto,
       },
       {
+        id: 12,
         name: "Протезирование зубов",
         icon: ProstheticsTeeth,
         photo: ProstheticsTeethPhoto,
@@ -174,11 +186,13 @@ export const SERVICES_DATA = [
     },
     subServices: [
       {
+        id: 13,
         name: "Поставить брекеты, исправить прикус",
         icon: BreketTeeth,
         photo: BreketTeethPhoto,
       },
       {
+        id: 14,
         name: "Проблемы ВНЧС",
         icon: VnchsTeeth,
         photo: VnchsTeethPhoto,
@@ -203,6 +217,7 @@ export const SERVICES_DATA = [
     },
     subServices: [
       {
+        id: 15,
         name: "Детская стоматология",
         icon: KidsTeeth,
         photo: KidsTeethPhoto,
@@ -224,6 +239,7 @@ export const SERVICES_DATA = [
     },
     subServices: [
       {
+        id: 16,
         name: "Удалить зуб",
         icon: RemoveTeeth,
         photo: RemoveTeethPhoto,
