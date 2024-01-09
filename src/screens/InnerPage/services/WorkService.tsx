@@ -1,7 +1,5 @@
-import React from 'react'
+"use client";
 
 export const WorkService = () => {
-  return (
-    <div>WorkService</div>
-  )
-}
+  return <div>WorkService</div>;
+};

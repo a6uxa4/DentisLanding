@@ -1,9 +1,10 @@
+"use client";
+
 import CustomSVG from "@/components/UI/CustomSvg/CustomSvg";
 import { ADVANTAGES } from "@/utils/constants/advantages.constant";
 import { BreadcrumbItem, Breadcrumbs, Button } from "@nextui-org/react";
 import clsx from "clsx";
 import Image from "next/image";
-import React from "react";
 
 export const DetailService = ({ serviceData }: any) => {
   return (

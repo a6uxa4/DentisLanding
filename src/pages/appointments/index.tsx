@@ -3,9 +3,10 @@
 import { usePostAppointmentMutation } from "@/services/appoinment.service";
 import { useGetPersonalQuery } from "@/services/personal.service";
 import { RECORDTYPEDATA } from "@/utils/constants/appointment.constant";
-import { Select, SelectItem, Input, Button } from "@nextui-org/react";
+import { Button, Input, Select, SelectItem } from "@nextui-org/react";
+import { NextPage } from "next";
 
-export const Appointments = () => {
+export const AppointmentsPage: NextPage = () => {
   const { data: PersonaData = [] } = useGetPersonalQuery(1);
   const [handlePost] = usePostAppointmentMutation();
   const data = {
@@ -27,8 +28,6 @@ export const Appointments = () => {
       console.log(error);
     }
   };
-  
-
   return (
     <div className="w-[100vw] bg-[#eef9f9] relative flex justify-center items-start py-10 text-center">
       <div className="w-full flex flex-col items-center justify-between gap-2 max-w-[1440px]">
@@ -85,3 +84,5 @@ export const Appointments = () => {
     </div>
   );
 };
+
+export default AppointmentsPage;

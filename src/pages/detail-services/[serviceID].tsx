@@ -1,3 +1,5 @@
+"use client";
+
 import SwitchContact from "@/components/UI/SwitchContact/SwitchContact";
 import { AboutService } from "@/screens/InnerPage/services/AboutService";
 import { DetailService } from "@/screens/InnerPage/services/DetailService";
