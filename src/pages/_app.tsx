@@ -6,13 +6,16 @@ import { Provider } from "react-redux";
 import "swiper/css";
 import "react-vertical-timeline-component/style.min.css";
 import ActiveSectionContextProvider from "@/providers/ActiveSection";
+import Natification from "@/components/UI/Notification";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
       <NextUIProvider>
         <ActiveSectionContextProvider>
-          <Component {...pageProps} />
+          <Natification>
+            <Component {...pageProps} />
+          </Natification>
         </ActiveSectionContextProvider>
       </NextUIProvider>
     </Provider>
