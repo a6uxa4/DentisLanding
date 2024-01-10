@@ -78,7 +78,12 @@ export const DatePicker = ({
             strokeWidth="1.5"
             viewBox="0 0 24 24"
             data-slot="selectorIcon"
-            className="absolute right-3 top-[40%] transition-transform duration-150 motion-reduce:transition-none data-[open=true]:rotate-180"
+            className={clsx(
+              "absolute right-3 top-[40%] transition-transform duration-150",
+              {
+                "rotate-180": isOpen,
+              }
+            )}
           >
             <path d="m6 9 6 6 6-6"></path>
           </svg>
