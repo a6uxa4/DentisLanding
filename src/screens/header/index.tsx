@@ -34,12 +34,12 @@ export const Header = () => {
         scrolled ? "bg-[#00d6d4]" : "bg-transparent"
       } transition duration-300 ease-in-out`}
     >
-      <div className="w-full h-full max-w-[1440px] m-auto px-10 flex relative">
+      <div className="w-full h-full max-w-[1440px] m-auto px-10 flex relative md:px-5">
         <div className="w-full h-full flex items-center justify-between">
           <h1
             className={`text-[30px] font-bold ${
               !scrolled ? "text-[#00d6d4]" : "text-white"
-            } transition duration-300 ease-in-out`}
+            } transition duration-300 ease-in-out md:text-[20px]`}
           >
             ESTETIC • CLINIC
           </h1>
@@ -91,26 +91,74 @@ export const Header = () => {
           </div>
           <motion.div
             onClick={() => setIsOpen(!isOpen)}
-            className="w-7 h-7 flex-col justify-around cursor-pointer relative hidden xl:flex"
+            className="w-7 h-7 flex-col md:w-6 md:h-6 justify-around cursor-pointer relative hidden xl:flex z-40"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
             <div
-              className={clsx("w-full h-1 bg-[#00d6d4] rounded", {
-                "rotate-45 absolute": isOpen,
+              className={clsx("w-full h-1 md:h-[3px] bg-[#00d6d4] rounded", {
+                "rotate-45 absolute !bg-[#00d6d4]": isOpen,
+                "bg-white": scrolled,
               })}
             />
             <div
-              className={clsx("w-full h-1 bg-[#00d6d4] rounded", {
+              className={clsx("w-full h-1 md:h-[3px] bg-[#00d6d4] rounded", {
                 hidden: isOpen,
+                "bg-white": scrolled,
               })}
             />
             <div
-              className={clsx("w-full h-1 bg-[#00d6d4] rounded", {
-                "rotate-[-45deg] absolute": isOpen,
+              className={clsx("w-full h-1 md:h-[3px] bg-[#00d6d4] rounded", {
+                "rotate-[-45deg] absolute !bg-[#00d6d4]": isOpen,
+                "bg-white": scrolled,
               })}
             />
           </motion.div>
+        </div>
+      </div>
+      <div
+        className={clsx(
+          "w-[100vw] bg-white h-[350px] z-30 absolute top-0 transition-height px-5 py-5 rounded-br-3xl rounded-bl-3xl border",
+          {
+            "h-0 top-[-100px]": !isOpen,
+          }
+        )}
+      >
+        <div className={clsx("w-fit h-fit flex items-center justify-center")}>
+          <Button
+            href="#appointments"
+            onClick={() => {
+              setActiveSection("APPOINTMENTS");
+              setTimeOfLastClick(Date.now());
+              route.push("#appointments");
+            }}
+            className={clsx(
+              "skew-x-[-10deg] bg-[#00d6d4] text-white font-semibold text-[16px]"
+            )}
+          >
+            Записаться на прием
+          </Button>
+        </div>
+        <div
+          className={clsx("w-full mt-5 flex flex-col gap-2 justify-center", {
+            "opacity-0 top-[-100px]": !isOpen,
+          })}
+        >
+          {NAV_LINKS.slice(1, 6).map((nav, index) => (
+            <Link
+              key={index}
+              href={nav.hash}
+              onClick={() => {
+                setActiveSection(nav.name);
+                setTimeOfLastClick(Date.now());
+              }}
+              className={clsx(
+                "px-3.5 py-1.5 text-base font-normal rounded-lg cursor-pointer transition bg-[#eef9f9] active:bg-[#00d6d4] active:text-white"
+              )}
+            >
+              {nav.name}
+            </Link>
+          ))}
         </div>
       </div>
     </header>

@@ -68,8 +68,6 @@ export const AppointmentsPage = () => {
     }
   };
 
-  console.log(errors.recordType?.message);
-
   return (
     <div
       ref={ref}
