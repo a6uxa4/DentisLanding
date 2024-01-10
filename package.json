@@ -12,6 +12,7 @@
     "@nextui-org/react": "^2.2.9",
     "@pbe/react-yandex-maps": "^1.2.5",
     "@reduxjs/toolkit": "^2.0.1",
+    "@vercel/speed-insights": "^1.0.2",
     "clsx": "^2.0.0",
     "date-fns": "^3.2.0",
     "dotenv": "^16.3.1",
