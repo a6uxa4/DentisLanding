@@ -118,9 +118,9 @@ export const Header = () => {
       </div>
       <div
         className={clsx(
-          "w-[100vw] bg-white h-[350px] z-30 absolute top-0 transition-height px-5 py-5 rounded-br-3xl rounded-bl-3xl border",
+          "w-[100vw] bg-white h-[320px] z-30 absolute top-0 transition-height px-5 py-5 rounded-br-3xl rounded-bl-3xl border",
           {
-            "h-0 top-[-100px]": !isOpen,
+            "!h-0 top-[-100px]": !isOpen,
           }
         )}
       >
@@ -141,7 +141,7 @@ export const Header = () => {
         </div>
         <div
           className={clsx("w-full mt-5 flex flex-col gap-2 justify-center", {
-            "opacity-0 top-[-100px]": !isOpen,
+            "opacity-0": !isOpen,
           })}
         >
           {NAV_LINKS.slice(1, 6).map((nav, index) => (
