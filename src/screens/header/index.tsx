@@ -7,6 +7,7 @@ import { Button } from "@nextui-org/react";
 import { useActiveSectionContext } from "@/providers/ActiveSection";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 export const Header = () => {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
@@ -14,6 +15,7 @@ export const Header = () => {
 
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [isOpen, setIsOpen] = useState(false);
+  const route = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -42,7 +44,7 @@ export const Header = () => {
             ESTETIC • CLINIC
           </h1>
           <div className="flex items-center gap-5 xl:hidden">
-            {NAV_LINKS.slice(1).map((nav, index) => (
+            {NAV_LINKS.slice(1, 6).map((nav, index) => (
               <Link
                 key={index}
                 href={nav.hash}
@@ -71,6 +73,12 @@ export const Header = () => {
           </div>
           <div className="w-fit h-full flex items-center justify-center md:hidden">
             <Button
+              href="#appointments"
+              onClick={() => {
+                setActiveSection("APPOINTMENTS");
+                setTimeOfLastClick(Date.now());
+                route.push("#appointments");
+              }}
               className={clsx(
                 "skew-x-[-10deg] bg-[#00d6d4] text-white font-semibold text-[16px]",
                 {

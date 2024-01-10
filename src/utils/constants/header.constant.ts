@@ -23,4 +23,8 @@ export const NAV_LINKS = [
     name: "О клиниках",
     hash: "#abouts",
   },
+  {
+    name: "APPOINTMENTS",
+    hash: "#appointments",
+  },
 ] as const;
