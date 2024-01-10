@@ -141,7 +141,7 @@ export const Header = () => {
         </div>
         <div
           className={clsx("w-full mt-5 flex flex-col gap-2 justify-center", {
-            "opacity-0": !isOpen,
+            hidden: !isOpen,
           })}
         >
           {NAV_LINKS.slice(1, 6).map((nav, index) => (
