@@ -36,6 +36,7 @@ export const DatePicker = ({
   useEffect(() => {
     onDate(format(newDate, "yyyy-MM-dd"));
     setValue({ ...value, date: format(newDate, "yyyy-MM-dd") });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function handleChangeDate(date: Date) {
