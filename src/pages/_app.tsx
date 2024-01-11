@@ -7,6 +7,7 @@ import "swiper/css";
 import "react-vertical-timeline-component/style.min.css";
 import ActiveSectionContextProvider from "@/providers/ActiveSection";
 import Natification from "@/components/UI/Notification";
+import Head from "next/head";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
@@ -14,6 +15,13 @@ export default function App({ Component, pageProps }: AppProps) {
       <NextUIProvider>
         <ActiveSectionContextProvider>
           <Natification>
+            <Head>
+              <title>Estetic clinic</title>
+              <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1"
+              />
+            </Head>
             <Component {...pageProps} />
           </Natification>
         </ActiveSectionContextProvider>
