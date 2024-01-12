@@ -20,7 +20,7 @@ function Home() {
       <PersonalPage />
       <AboutPage />
       <WorkPage />
-      {/* <FeedbackPage /> */}
+      <FeedbackPage />
       <AppointmentsPage />
       <SwitchContact />
     </>

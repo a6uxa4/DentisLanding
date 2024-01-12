@@ -16,7 +16,7 @@ export const FeedbackPage = () => {
       id="feedbacks"
       className="w-[100vw] bg-[#EEF9F9] relative flex justify-center items-start py-10 bg-gold-400 sm:py-5 scroll-mt-24"
     >
-      <div className="flex flex-col gap-2">
+      <div className="w-full flex flex-col gap-2">
         <div className="py-5 w-full flex items-center justify-center">
           <h1 className="text-[30px] font-bold font-mono lg:text-[20px] sm:text-[16px]">
             Наши отзывы
