@@ -151,6 +151,7 @@ export const Header = () => {
               onClick={() => {
                 setActiveSection(nav.name);
                 setTimeOfLastClick(Date.now());
+                setIsOpen(false);
               }}
               className={clsx(
                 "px-3.5 py-1.5 text-base font-normal rounded-lg cursor-pointer transition bg-[#eef9f9] active:bg-[#00d6d4] active:text-white"
