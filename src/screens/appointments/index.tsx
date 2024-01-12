@@ -15,7 +15,6 @@ import toast from "react-hot-toast";
 import AppointmentPhoto from "../../assets/images/appointmentPhoto.svg";
 import Image from "next/image";
 import { useSectionInView } from "@/hooks/useSectionInView";
-import { error } from "console";
 
 export const AppointmentsPage = () => {
   const {
@@ -40,7 +39,7 @@ export const AppointmentsPage = () => {
 
   const { ref } = useSectionInView("APPOINTMENTS");
 
-  const { data: PersonaData = [] } = useGetPersonalQuery(1);
+  const { data: PersonaData = [] } = useGetPersonalQuery(14);
   const { data: FreeTimeData = [] } = useGetFreeTimeAppoinmentQuery(
     {
       userID: watch("userId"),

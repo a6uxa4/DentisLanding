@@ -41,7 +41,7 @@ export const Header = () => {
               !scrolled ? "text-[#00d6d4]" : "text-white"
             } transition duration-300 ease-in-out md:text-[20px]`}
           >
-            ESTETIC • CLINIC
+            ESTETIC CLINIC
           </h1>
           <div className="flex items-center gap-5 xl:hidden">
             {NAV_LINKS.slice(1, 6).map((nav, index) => (
