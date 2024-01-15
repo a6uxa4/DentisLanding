@@ -2,7 +2,6 @@
 
 import { Button } from "@nextui-org/react";
 import { NextPage } from "next";
-import Link from "next/link";
 import clsx from "clsx";
 import { useRouter } from "next/router";
 import { withLayout } from "@/Layout";

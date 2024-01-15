@@ -1,8 +1,9 @@
+"use client";
+
 import { NextPage } from "next";
 import Image from "next/image";
 import PhotoAbout from "../../assets/images/About.jpg";
 import { withLayout } from "@/Layout";
-import { Helmet } from "react-helmet";
 import Head from "next/head";
 
 const AboutPage: NextPage = () => {
