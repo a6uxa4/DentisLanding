@@ -3,6 +3,7 @@
 import { withLayout } from "@/Layout";
 import SwitchContact from "@/components/UI/SwitchContact/SwitchContact";
 import { AboutPage } from "@/screens/about";
+import { AboutClinicPage } from "@/screens/aboutclinic";
 import { AdvantagesPage } from "@/screens/advantages";
 import AppointmentsPage from "@/screens/appointments";
 import { BannerPage } from "@/screens/banner";
@@ -21,6 +22,7 @@ function Home() {
       <AboutPage />
       <WorkPage />
       <FeedbackPage />
+      <AboutClinicPage />
       <AppointmentsPage />
       <SwitchContact />
     </>

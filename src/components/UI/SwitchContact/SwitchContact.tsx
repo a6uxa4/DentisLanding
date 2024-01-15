@@ -83,29 +83,9 @@ const SwitchContact = () => {
             : LogoAnimate(-20, 40, 0.1, 360, 0)
         }
         transition={{ delay: !open ? 0 : 0.25 }}
-        className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[96px] right-[32px] sm:bottom-[85px] sm:right-[0px]  flex z-10 justify-center items-center shadow-lg shadow-[#58aab7]"
+        className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[110px] right-[12px] sm:bottom-[85px] sm:right-[0px]  flex z-10 justify-center items-center shadow-lg shadow-[#58aab7]"
       >
         <GrInstagram
-          color="white"
-          className="w-[20px] h-[20px] sm:w-[16px] sm:h-[16px]"
-        />
-      </motion.a>
-      <motion.a
-        href="https://t.me/Estetic_clinik"
-        target="_blank"
-        whileHover={{ scale: 1.2 }}
-        initial={{
-          opacity: 0,
-        }}
-        animate={
-          open
-            ? LogoAnimate(-100, 0, 1, 0, 1)
-            : LogoAnimate(-60, 80, 0.1, 360, 0)
-        }
-        transition={{ delay: !open ? 0 : 0.3 }}
-        className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[134px] right-[-6px] sm:bottom-[120px] sm:right-[-35px]  flex z-10 justify-center items-center shadow-lg shadow-[#58aab7]"
-      >
-        <BiLogoTelegram
           color="white"
           className="w-[20px] h-[20px] sm:w-[16px] sm:h-[16px]"
         />

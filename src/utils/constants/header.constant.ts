@@ -20,7 +20,7 @@ export const NAV_LINKS = [
     hash: "#feedbacks",
   },
   {
-    name: "О клиника",
+    name: "О клиникe",
     hash: "#abouts",
   },
   {
