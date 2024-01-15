@@ -57,7 +57,10 @@ export const AppointmentsPage = () => {
   const onSubmit = async (data: appointmentsProps) => {
     try {
       const loadingToast = toast.loading("Загрузка, подождите пожалуйста");
-      const response = await handlePost(data).unwrap();
+      const response = await handlePost({
+        ...data,
+        phoneNumber: data.phoneNumber.slice(1),
+      }).unwrap();
       toast.dismiss(loadingToast);
       toast.success(response.message);
       reset();

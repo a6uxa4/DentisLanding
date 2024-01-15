@@ -73,11 +73,10 @@ export const Header = () => {
           </div>
           <div className="w-fit h-full flex items-center justify-center md:hidden">
             <Button
-              href="#appointments"
               onClick={() => {
                 setActiveSection("APPOINTMENTS");
                 setTimeOfLastClick(Date.now());
-                route.push("#appointments");
+                route.push("/#appointments");
               }}
               className={clsx(
                 "skew-x-[-10deg] bg-[#00d6d4] text-white font-semibold text-[16px]",
