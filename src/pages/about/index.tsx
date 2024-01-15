@@ -1,14 +1,16 @@
 import { NextPage } from "next";
 import Image from "next/image";
 import PhotoAbout from "../../assets/images/About.jpg";
-import Link from "next/link";
-import { Button } from "@nextui-org/react";
-import clsx from "clsx";
 import { withLayout } from "@/Layout";
+import { Helmet } from "react-helmet";
+import Head from "next/head";
 
 const AboutPage: NextPage = () => {
   return (
     <div className="w-[100vw] h-full flex lg:flex-col lg:items-center lg:mb-14">
+      <Head>
+        <title>Estetic Clinic - О нас</title>
+      </Head>
       <div className="w-[50%] h-full flex flex-col gap-10 p-10 lg:w-full md:text-[14px] md:gap-5">
         <span>
           Estetic Clinic - это современная стоматологическая клиника,

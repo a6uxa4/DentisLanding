@@ -6,12 +6,16 @@ import Link from "next/link";
 import clsx from "clsx";
 import { useRouter } from "next/router";
 import { withLayout } from "@/Layout";
+import Head from "next/head";
 
 const ContactsPage: NextPage = () => {
   const route = useRouter();
 
   return (
     <div className="container flex flex-col gap-4">
+      <Head>
+        <title>Estetic Clinic - Контакты</title>
+      </Head>
       <div className="w-full flex gap-4 px-10 py-10 xl:flex-col xl:items-center">
         <div className="w-1/2 shadow-xl p-3 px-4 flex flex-col gap-2 md:w-full">
           <p className="text-xl">Estetic Clinic Бишкек</p>
