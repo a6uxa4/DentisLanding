@@ -44,7 +44,7 @@ export const Header = () => {
             ESTETIC CLINIC
           </h1>
           <div className="flex items-center gap-5 xl:hidden">
-            {NAV_LINKS.slice(1, 6).map((nav, index) => (
+            {NAV_LINKS.slice(1, 7).map((nav, index) => (
               <Link
                 key={index}
                 href={nav.hash}
@@ -118,7 +118,7 @@ export const Header = () => {
       </div>
       <div
         className={clsx(
-          "w-[100vw] bg-white h-[320px] z-30 absolute top-0 transition-height px-5 py-5 rounded-br-3xl rounded-bl-3xl border",
+          "w-[100vw] bg-white h-[350px] z-30 absolute top-0 transition-all px-5 py-5 rounded-br-3xl rounded-bl-3xl border",
           {
             "!h-0 top-[-100px]": !isOpen,
           }
@@ -126,7 +126,6 @@ export const Header = () => {
       >
         <div className={clsx("w-fit h-fit flex items-center justify-center")}>
           <Button
-            href="#appointments"
             onClick={() => {
               setActiveSection("APPOINTMENTS");
               setTimeOfLastClick(Date.now());
@@ -144,7 +143,7 @@ export const Header = () => {
             hidden: !isOpen,
           })}
         >
-          {NAV_LINKS.slice(1, 6).map((nav, index) => (
+          {NAV_LINKS.slice(1, 7).map((nav, index) => (
             <Link
               key={index}
               href={nav.hash}
@@ -154,7 +153,7 @@ export const Header = () => {
                 setIsOpen(false);
               }}
               className={clsx(
-                "px-3.5 py-1.5 text-base font-normal rounded-lg cursor-pointer transition bg-[#eef9f9] active:bg-[#00d6d4] active:text-white"
+                "px-3.5 py-1.5 text-base font-normal rounded-lg cursor-pointer transition-all bg-[#eef9f9] active:bg-[#00d6d4] active:text-white"
               )}
             >
               {nav.name}

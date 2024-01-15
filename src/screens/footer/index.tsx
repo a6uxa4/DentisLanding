@@ -12,7 +12,8 @@ export const Footer = () => {
             ESTETIC CLINIC
           </div>
           <p className="text-barber-color max-w-[350px] xs:text-xs xs:max-w-[230px]">
-            Искусство здоровой улыбки начинается здесь, в нашей стомотологии
+            При выборе стоматологической клиники помните, что низкие цены – это
+            неминуемо низкое качество услуги.
           </p>
         </div>
         <p className="text-barber-color xs:text-[10px]">

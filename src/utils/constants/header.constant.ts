@@ -21,7 +21,11 @@ export const NAV_LINKS = [
   },
   {
     name: "О клиникe",
-    hash: "#abouts",
+    hash: "/about",
+  },
+  {
+    name: "Контакты",
+    hash: "/contacts",
   },
   {
     name: "APPOINTMENTS",
