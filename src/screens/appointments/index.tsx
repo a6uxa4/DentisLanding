@@ -15,6 +15,7 @@ import toast from "react-hot-toast";
 import AppointmentPhoto from "../../assets/images/appointmentPhoto.svg";
 import Image from "next/image";
 import { useSectionInView } from "@/hooks/useSectionInView";
+import { useState } from "react";
 
 export const AppointmentsPage = () => {
   const {
@@ -36,6 +37,7 @@ export const AppointmentsPage = () => {
       recordType: null,
     },
   });
+  const [isData, setIsData] = useState(false);
 
   const { ref } = useSectionInView("APPOINTMENTS");
 
@@ -50,7 +52,7 @@ export const AppointmentsPage = () => {
     }
   );
 
-  const [handlePost] = usePostAppointmentMutation();
+  const [handlePost, { isLoading }] = usePostAppointmentMutation();
 
   const onSubmit = async (data: appointmentsProps) => {
     try {
@@ -59,6 +61,7 @@ export const AppointmentsPage = () => {
       toast.dismiss(loadingToast);
       toast.success(response.message);
       reset();
+      setIsData(true);
     } catch (error) {
       toast.error(
         (error as Error).message ||
@@ -192,6 +195,8 @@ export const AppointmentsPage = () => {
                 className="max-w-xs bg-white text-[#00d6d4] font-semibold"
                 radius="sm"
                 onClick={handleSubmit(onSubmit)}
+                isDisabled={isData}
+                isLoading={isLoading}
               >
                 Записаться
               </Button>
