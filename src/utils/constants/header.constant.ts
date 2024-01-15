@@ -1,23 +1,23 @@
 export const NAV_LINKS = [
   {
     name: "HOME",
-    hash: "#home",
+    hash: "/#home",
   },
   {
     name: "Услуги",
-    hash: "#services",
+    hash: "/#services",
   },
   {
     name: "Врачи",
-    hash: "#personals",
+    hash: "/#personals",
   },
   {
     name: "Примеры работ",
-    hash: "#works",
+    hash: "/#works",
   },
   {
     name: "Отзывы",
-    hash: "#feedbacks",
+    hash: "/#feedbacks",
   },
   {
     name: "О клиникe",
@@ -29,6 +29,6 @@ export const NAV_LINKS = [
   },
   {
     name: "APPOINTMENTS",
-    hash: "#appointments",
+    hash: "/#appointments",
   },
 ] as const;

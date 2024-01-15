@@ -5,35 +5,13 @@ import { NextPage } from "next";
 import Link from "next/link";
 import clsx from "clsx";
 import { useRouter } from "next/router";
+import { withLayout } from "@/Layout";
 
 const ContactsPage: NextPage = () => {
   const route = useRouter();
 
   return (
     <div className="container flex flex-col gap-4">
-      <div className="fixed z-20 bottom-10 left-0 bg-white py-2 w-screen flex items-center justify-center">
-        <Link href="/">
-          <Button
-            className={clsx(
-              "skew-x-[-10deg] bg-[#00d6d4] text-white font-semibold text-[16px]"
-            )}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="1em"
-              height="1em"
-              fill="currentColor"
-              stroke="currentColor"
-              strokeWidth="0"
-              fontSize="20"
-              viewBox="0 0 1024 1024"
-            >
-              <path d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 00-44.4 0L77.5 505a63.9 63.9 0 00-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0018.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"></path>
-            </svg>
-            <span>Вернутся на главную страницу</span>
-          </Button>
-        </Link>
-      </div>
       <div className="w-full flex gap-4 px-10 py-10 xl:flex-col xl:items-center">
         <div className="w-1/2 shadow-xl p-3 px-4 flex flex-col gap-2 md:w-full">
           <p className="text-xl">Estetic Clinic Бишкек</p>
@@ -97,4 +75,4 @@ const ContactsPage: NextPage = () => {
   );
 };
 
-export default ContactsPage;
+export default withLayout(ContactsPage);
