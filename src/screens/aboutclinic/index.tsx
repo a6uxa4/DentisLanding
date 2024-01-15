@@ -156,13 +156,13 @@ export const AboutClinicPage = () => {
           </div>
         </div>
         <div className="w-[50%] h-full">
-          <Image
+          {/* <Image
             className="w-full h-full flex items-center"
-            // src="https://nikolaevsk.njuans.ru/upload/no_img.jpg"
+            src="https://nikolaevsk.njuans.ru/upload/no_img.jpg"
             alt="hhel"
             width={500}
             height={500}
-          />
+          /> */}
         </div>
       </div>
     </div>
