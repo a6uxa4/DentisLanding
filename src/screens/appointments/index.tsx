@@ -37,7 +37,6 @@ export const AppointmentsPage = () => {
       recordType: null,
     },
   });
-  const [isData, setIsData] = useState(false);
 
   const { ref } = useSectionInView("APPOINTMENTS");
 
@@ -55,16 +54,26 @@ export const AppointmentsPage = () => {
   const [handlePost, { isLoading }] = usePostAppointmentMutation();
 
   const onSubmit = async (data: appointmentsProps) => {
+    const storedData = localStorage.getItem("IS_APPOINTMENT");
+    const IS_DATA = storedData ? new Date(JSON.parse(storedData)) : false;
+
     try {
-      const loadingToast = toast.loading("Загрузка, подождите пожалуйста");
-      const response = await handlePost({
-        ...data,
-        phoneNumber: data.phoneNumber.slice(1),
-      }).unwrap();
-      toast.dismiss(loadingToast);
-      toast.success(response.message);
-      reset();
-      setIsData(true);
+      if (
+        !IS_DATA ||
+        new Date().getTime() - IS_DATA.getTime() > 5 * 60 * 1000
+      ) {
+        const loadingToast = toast.loading("Загрузка, подождите пожалуйста");
+        const response = await handlePost({
+          ...data,
+          phoneNumber: data.phoneNumber.slice(1),
+        }).unwrap();
+        toast.dismiss(loadingToast);
+        toast.success(response.message);
+        localStorage.setItem("IS_APPOINTMENT", JSON.stringify(new Date()));
+        reset();
+      } else {
+        toast.error("Вы уже записались повторите через 5 минут");
+      }
     } catch (error) {
       toast.error(
         (error as Error).message ||
@@ -198,7 +207,6 @@ export const AppointmentsPage = () => {
                 className="max-w-xs bg-white text-[#00d6d4] font-semibold"
                 radius="sm"
                 onClick={handleSubmit(onSubmit)}
-                isDisabled={isData}
                 isLoading={isLoading}
               >
                 Записаться
