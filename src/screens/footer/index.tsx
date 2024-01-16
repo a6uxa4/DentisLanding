@@ -1,8 +1,8 @@
-import React from "react";
+"use client";
 
 export const Footer = () => {
   return (
-    <div className="h-[200px] bg-[#00d6d4] text-white">
+    <div className="h-[200px] bg-[#00d6d4] text-white mt-5">
       <footer className="h-full max-w-[1440px] text-base-content flex items-center justify-between m-auto px-8 py-8">
         <div className="flex flex-col gap-5 h-full">
           <div

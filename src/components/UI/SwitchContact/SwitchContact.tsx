@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { MdPhoneForwarded } from "react-icons/md";
-import { BiLogoTelegram } from "react-icons/bi";
 import { GrInstagram } from "react-icons/gr";
 import { ImWhatsapp } from "react-icons/im";
 
@@ -32,7 +31,7 @@ const SwitchContact = () => {
       <motion.div
         onClick={() => setOpen(!open)}
         whileTap={{ scale: 0.8 }}
-        className="w-[70px] h-[70px] sm:w-[50px] sm:h-[50px] bg-[#00d6d4] rounded-full fixed bottom-10 right-10 cursor-pointer flex items-center justify-center z-20  sm:right-5"
+        className="w-[70px] h-[70px] sm:w-[50px] sm:h-[50px] bg-[#00d6d4] rounded-full sticky bottom-[40px] left-[92%] cursor-pointer flex items-center justify-center z-20 sm:left-[80%] sm:bottom-[30px]"
       >
         <div
           className={`w-[70px] h-[70px] sm:w-[50px] sm:h-[50px] bg-[#00d6d4] rounded-full absolute ${

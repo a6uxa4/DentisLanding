@@ -29,12 +29,12 @@ export const AppointmentsPage = () => {
     defaultValues: {
       firstName: "",
       lastName: "",
-      userId: null,
+      userId: "",
       phoneNumber: "",
       startDate: "",
       startTime: "",
       endTime: "",
-      recordType: null,
+      recordType: "",
     },
   });
 
