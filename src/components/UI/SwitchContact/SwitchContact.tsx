@@ -82,7 +82,7 @@ const SwitchContact = () => {
             : LogoAnimate(-20, 40, 0.1, 360, 0)
         }
         transition={{ delay: !open ? 0 : 0.25 }}
-        className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[110px] right-[12px] sm:bottom-[85px] sm:right-[0px]  flex z-10 justify-center items-center shadow-lg shadow-[#58aab7]"
+        className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[110px] right-[12px] sm:bottom-[85px] sm:right-[-20px]  flex z-10 justify-center items-center shadow-lg shadow-[#58aab7]"
       >
         <GrInstagram
           color="white"
@@ -102,7 +102,7 @@ const SwitchContact = () => {
             : LogoAnimate(-115, 86, 0.1, 360, 0)
         }
         transition={{ delay: !open ? 0 : 0.35 }}
-        className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[142px] right-[-60px] sm:bottom-[128px] sm:right-[-80px] flex z-10 justify-center items-center shadow-lg shadow-[#58aab7]"
+        className="rounded-full w-[40px] h-[40px] sm:w-[35px] sm:h-[35px] bg-[#00d6d4] fixed bottom-[142px] right-[-60px] sm:bottom-[110px] sm:right-[-70px] flex z-10 justify-center items-center shadow-lg shadow-[#58aab7]"
       >
         <MdPhoneForwarded
           color="white"
