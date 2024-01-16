@@ -7,6 +7,7 @@ import { AboutClinicPage } from "@/screens/aboutclinic";
 import { AdvantagesPage } from "@/screens/advantages";
 import AppointmentsPage from "@/screens/appointments";
 import { BannerPage } from "@/screens/banner";
+import { CountUpPage } from "@/screens/countup";
 import { FeedbackPage } from "@/screens/feedback";
 import { PersonalPage } from "@/screens/personal";
 import { ServicesPage } from "@/screens/services";
@@ -22,7 +23,8 @@ function Home() {
       <AboutPage />
       <WorkPage />
       <FeedbackPage />
-      {/* <AboutClinicPage /> */}
+      <AboutClinicPage />
+      <CountUpPage />
       <AppointmentsPage />
       <SwitchContact />
     </>
