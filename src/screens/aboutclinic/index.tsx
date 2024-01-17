@@ -39,8 +39,8 @@ export const AboutClinicPage = () => {
           />
         </div>
         <div className="mx-auto max-w-8xl px-6 lg:px-8">
-          <div className="mx-auto max-w-[80%] lg:mx-0">
-            <h2 className="text-4xl font-bold tracking-tight text-black sm:text-6xl">Estetic Clinic</h2>
+          <div className="mx-auto max-w-[60%] lg:mx-0">
+            <h3 className="text-2xl font-bold tracking-tight text-black sm:text-6xl">Estetic Clinic</h3>
             <p className="mt-6 text-lg leading-8 text-black-300">
             Мы специализируемся в широком спектре стоматологических процедур: от рутинной гигиены полости 
             рта и лечения кариеса до сложных ортодонтических коррекций и хирургических вмешательств. 
