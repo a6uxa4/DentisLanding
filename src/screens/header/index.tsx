@@ -36,6 +36,7 @@ export const Header = () => {
     >
       <div className="w-full h-full max-w-[1440px] m-auto px-10 flex relative md:px-5">
         <div className="w-full h-full flex items-center justify-between">
+          <a href="https://estetic.kg">
           <h1
             className={`text-[30px] font-bold ${
               !scrolled ? "text-[#00d6d4]" : "text-white"
@@ -43,6 +44,7 @@ export const Header = () => {
           >
             ESTETIC CLINIC
           </h1>
+          </a>
           <div className="flex items-center gap-5 xl:hidden">
             {NAV_LINKS.slice(1, 7).map((nav, index) => (
               <Link

@@ -83,6 +83,7 @@ export const AppointmentsPage = () => {
   };
 
   return (
+    
     <div
       ref={ref}
       id="appointments"
@@ -91,7 +92,7 @@ export const AppointmentsPage = () => {
       <div className="w-full flex flex-col gap-2 max-w-[1440px]">
         <div className="py-5 w-full flex items-center justify-center">
           <h1 className="text-[30px] font-bold font-mono lg:text-[20px] sm:text-[16px]">
-            Онлайн запись
+            Онлайн запись на прием
           </h1>
         </div>
         <div className="w-full flex items-center justify-between">

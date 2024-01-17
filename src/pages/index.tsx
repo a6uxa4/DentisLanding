@@ -17,12 +17,12 @@ function Home() {
     <>
       <BannerPage />
       <ServicesPage />
+      <AboutClinicPage />
       <AdvantagesPage />
       <PersonalPage />
       <AboutPage />
       <WorkPage />
       <FeedbackPage />
-      {/* <AboutClinicPage /> */}
       <AppointmentsPage />
       <SwitchContact />
     </>
