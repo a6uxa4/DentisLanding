@@ -23,7 +23,7 @@ function Home() {
       <AboutPage />
       <WorkPage />
       <FeedbackPage />
-      <AboutClinicPage />
+      {/* <AboutClinicPage /> */}
       <CountUpPage />
       <AppointmentsPage />
       <SwitchContact />
