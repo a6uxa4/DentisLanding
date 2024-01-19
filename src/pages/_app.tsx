@@ -23,11 +23,16 @@ export default function App({ Component, pageProps }: AppProps) {
               />
               <meta
                 name="description"
-                content="Стоматологическая клиника Estetic Clinic предлагает все виды стоматологических услуг - лечение, протезирование, имплантация и др. Квалифицированные врачи, современное оборудование, гарантия качества. Запишитесь на прием онлайн"
+                content="Стоматологическая клиника Estetic Clinic предлагает все виды 
+                стоматологических услуг - лечение, протезирование, имплантация и др. 
+                Квалифицированные врачи, современное оборудование, гарантия качества. 
+                Запишитесь на прием онлайн"
               />
               <meta
                 name="keywords"
-                content="Estetic Clinic Бишкек,
+                content="Estetic Clinic Бишкек, стоматолог Бишкек,
+                эстетик клиник, клиника эстетик,veneers clinic,
+                dental clinic, эстетик клиник бишкек
                 стоматология Бишкек, стоматология Кыргызстан
                 стоматология цены Бишкек
                 лечение зубов Бишкек
@@ -37,7 +42,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 современное стоматологическое оборудование
                 высококвалифицированные стоматологи"
               />
-              <meta name="author" content="AkSoft" />
+              <meta name="author" content="Aksoft" />
               <link rel="icon" href="/favicon.ico" />
             </Head>
             <Component {...pageProps} />

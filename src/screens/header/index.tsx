@@ -37,7 +37,8 @@ export const Header = () => {
       <div className="w-full h-full max-w-[1440px] m-auto px-10 flex relative md:px-5">
         <div className="w-full h-full flex items-center justify-between">
           <h1
-            className={`text-[30px] font-bold ${
+            onClick={() => route.push("/")}
+            className={`text-[30px] font-bold cursor-pointer ${
               !scrolled ? "text-[#00d6d4]" : "text-white"
             } transition duration-300 ease-in-out md:text-[20px]`}
           >
