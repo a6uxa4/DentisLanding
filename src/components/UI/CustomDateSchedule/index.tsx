@@ -91,14 +91,14 @@ export const DatePicker = ({
         </div>
       </PopoverTrigger>
       <PopoverContent>
-        <div className="w-full h-full flex">
+        <div className="w-full h-full flex sm:flex-col">
           <MiniCalendar
             newDate={newDate}
             setNewDate={(e) => handleChangeDate(e)}
           />
           <ScrollShadow
             className={clsx(
-              "w-[120px] h-[260px] flex flex-col gap-2 border-l pl-2 py-5 items-center justify-center",
+              "w-[120px] h-[260px] flex flex-col gap-2 border-l pl-2 py-5 items-center justify-center sm:h-[70px] sm:flex-row sm:w-[260px]",
               {
                 "!justify-start": scheduleData.length,
               }
