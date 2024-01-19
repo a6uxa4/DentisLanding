@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
               />
               <meta
                 name="keywords"
-                content="Estetic Clinic Бишкек,
+                content="Estetic Clinic Бишкек, стоматолог Бишкек,
                 эстетик клиник, клиника эстетик,veneers clinic,
                 dental clinic, эстетик клиник бишкек
                 стоматология Бишкек, стоматология Кыргызстан
@@ -42,7 +42,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 современное стоматологическое оборудование
                 высококвалифицированные стоматологи"
               />
-              <meta name="author" content="AkSoft" />
+              <meta name="author" content="Aksoft" />
               <link rel="icon" href="/favicon.ico" />
             </Head>
             <Component {...pageProps} />
