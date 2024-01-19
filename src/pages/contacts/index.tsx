@@ -14,6 +14,33 @@ const ContactsPage: NextPage = () => {
     <div className="container flex flex-col gap-4">
       <Head>
         <title>Estetic Clinic - Контакты</title>
+        <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1"
+              />
+              <meta
+                name="description"
+                content="Dental Clinic Estetic Бишкек предлагает все виды 
+                стоматологических услуг - лечение, протезирование, имплантация и др. 
+                Квалифицированные врачи, современное оборудование, гарантия качества. 
+                Запишитесь на прием онлайн"
+              />
+              <meta
+                name="keywords"
+                content="Эстетик Клиник Бишкек,
+                эстетик клиник, клиника эстетик,veneers clinic,
+                dental clinic, эстетик клиник бишкек
+                стоматология Бишкек, стоматология Кыргызстан
+                стоматология цены Бишкек
+                лечение зубов Бишкек
+                протезирование зубов Бишкек
+                имплантация зубов Бишкек
+                безболезненное лечение зубов
+                современное стоматологическое оборудование
+                высококвалифицированные стоматологи"
+              />
+              <meta name="author" content="AkSoft" />
+              <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="w-full flex gap-4 px-10 py-10 xl:flex-col xl:items-center">
         <div className="w-1/2 shadow-xl p-3 px-4 flex flex-col gap-2 md:w-full">
