@@ -2,7 +2,7 @@
 
 export const AboutClinicPage = () => {
   return (
-    <div className="w-full max-w-[1440px] m-auto relative isolate overflow-hidden py-24 sm:py-32">
+    <div className="w-full max-w-[1440px] m-auto relative isolate overflow-hidden py-24 sm:py-12">
       <div
         className="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
         aria-hidden="true"
@@ -29,17 +29,17 @@ export const AboutClinicPage = () => {
       </div>
       <div className="mx-auto max-w-8xl px-6 lg:px-8">
         <div className="mx-auto max-w-[90%] lg:mx-0">
-          <h3 className="text-2xl font-bold tracking-tight text-black sm:text-6xl">
+          <h3 className="text-2xl font-bold tracking-tight text-black sm:text-6xl sm:text-[20px]">
             Estetic Clinic
           </h3>
-          <p className="mt-6 text-lg leading-8 text-black-300">
+          <p className="mt-6 text-lg leading-8 text-black-300 sm:text-[14px]">
             Мы специализируемся в широком спектре стоматологических процедур: от
             рутинной гигиены полости рта и лечения кариеса до сложных
             ортодонтических коррекций и хирургических вмешательств. Наша клиника
             оборудована передовой техникой, что позволяет нам предоставлять
             высокоточные и безопасные процедуры.
           </p>
-          <p className="mt-6 text-lg leading-8 text-black-300">
+          <p className="mt-6 text-lg leading-8 text-black-300 sm:text-[14px]">
             Estetic Clinic- место, где улыбка станет ярче. Доверьте свое
             улучшение здоровью и красоте нашей опытной команде, и мы с радостью
             сделаем вашу улыбку самой лучшей версией себя!
